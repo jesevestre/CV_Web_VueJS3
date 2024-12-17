@@ -127,9 +127,12 @@
 							Terrasse de 60 places
 						</li>
 					</ul>
-					<!-- <div class="row h-0 justify-content-center align-items-center pt-2">
-						<router-link to="/Reservation" class="slogan-button">Réservation samedi soir</router-link>
-					</div> -->
+					<div class="row h-0 justify-content-center align-items-center pt-2">
+						<router-link to="/Reservation" class="slogan-button">Réservation samedis soir</router-link>
+					</div>
+					<div class="row h-0 justify-content-center align-items-center pt-2">
+						<router-link to="/Reservation31decembre" class="slogan-button">Réservation 31 décembre</router-link>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -237,25 +240,11 @@
 			</div>
 		</div>
 	</div>
-
-	<footer class="text-center footer">
-		<span>
-			<a style="color: white">
-				<!-- <NombreVisites /> -->
-			</a>&nbsp;-&nbsp;&nbsp;</span>
-		<span>
-			<img class="icone" src="@/assets/images/phoneBlanc.png" alt="Logo téléphone">&nbsp;<a style="color: white"
-				href="tel:+33625926100">06 25 92 61 00
-			</a>
-		</span>
-	</footer>
-
 </template>
 
 
 <script>
 import { onMounted } from 'vue';
-// import NombreVisites from './components/NombreVisites.vue';
 
 export default {
 	name: 'Home',
@@ -268,11 +257,6 @@ export default {
 			});
 		});
 	},
-
-	// components: {
-	//   NombreVisites,
-	// },
-
 }
 </script>
 
@@ -344,20 +328,6 @@ export default {
 .slogan-button:hover {
 	background-color: #777;
 	text-decoration: none;
-}
-
-.footer {
-	position: relative;
-	width: 100%;
-
-	vertical-align: middle;
-	left: 0px;
-	right: 0px;
-	bottom: 0;
-
-	text-align: center;
-	background-color: #444;
-	color: white;
 }
 
 @media screen and (max-width: 865px) {
