@@ -1,11 +1,13 @@
 <template>
 	<div class="menu-div">
-		<a href="#menu" class="bouton-menu sous-ligne">La&nbsp;carte</a>&nbsp;|
-		<a href="#evenements" class="bouton-menu">Événements</a>&nbsp;|
+		<a href="#menu" class="bouton-menu">La&nbsp;carte</a>&nbsp;|
+		<!-- <a href="#evenements" class="bouton-menu">Événements</a>&nbsp;| -->
+		<a href="#StSylvestre" class="bouton-menu"><b>Saint-Sylvestre</b></a>&nbsp;|
 		<a href="#horaires" class="bouton-menu">Horaires</a>&nbsp;|
 		<a href="#localisation" class="bouton-menu">Localisation</a>&nbsp;|
 		<a href="#emporter" class="bouton-menu">À&nbsp;emporter</a>
 	</div>
+
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -75,7 +77,7 @@
 				<div class="card-body">
 					<h5 class="card-title">La carte</h5>
 					<h6 class="card-subtitle mb-2 text-muted">Repas du midi 14,90€</h6>
-					<h6 class="card-subtitle mb-2 text-muted">Soirs, weekend et jours feriés 21,90€</h6>
+					<h6 class="card-subtitle mb-2 text-muted">Samedi soir, weekend et jours feriés 21,90€</h6>
 					<h6 class="card-subtitle mb-2 text-muted">Label certifié <i>Frais Equilibre Santé</i></h6>
 					<ul>
 						<li>
@@ -101,7 +103,38 @@
 		</div>
 	</div>
 
-	<div class="container d-flex flex-row pt-5 pb-5 mt-5 mb-5 ml-sm-3" id="evenements">
+	<div class="container d-flex flex-row pt-5 pb-5 mt-5 mb-5 ml-sm-3" id="StSylvestre">
+		<div class="row">
+			<div class="little-card card col-11 col-10 col-sm-6 text-white" style="width: 18rem; background-color: #990005;">
+				<div class="card-body">
+					<h5 class="card-title" style="color: #DAA520"><b>Fête de la Saint-Sylvestre</b></h5>
+					<h6 class="card-subtitle mb-2 text-muted" style="color: #FFF !important;">Réserver votre jour de l'an 2025</h6>
+					<ul>
+						<li>
+							Venez célébrez avec nous <b>mardi 31 Décembre 2024</b> le réveillon de la Saint-Sylvestre
+						</li>
+						<li>
+							<b>Buffet exeptionnel</b> à 29,90€ par personne, 16,90€ pour les enfants
+						</li>
+						<li>
+							Ambiance festive et <b>animations prévues</b>
+						</li>
+						<li>
+							Piano avant minuit
+						</li>
+					</ul>
+					<div class="row h-0 justify-content-center align-items-center pt-2">
+						<router-link to="/Reservation" class="slogan-button" style="background-color: #006600;">Cliquez ici pour réserver</router-link>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<img class="d-block w-100" src="@/assets/photos/7.jpg" alt="Image de présentation du buffet">
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="container d-flex flex-row pt-5 pb-5 mt-5 mb-5 ml-sm-3" id="evenements">
 		<div class="row">
 			<div class="little-card card col-11 col-10 col-sm-6" style="width: 18rem;">
 				<div class="card-body">
@@ -130,16 +163,13 @@
 					<div class="row h-0 justify-content-center align-items-center pt-2">
 						<router-link to="/Reservation" class="slogan-button">Réservation samedis soir</router-link>
 					</div>
-					<div class="row h-0 justify-content-center align-items-center pt-2">
-						<router-link to="/Reservation31decembre" class="slogan-button">Réservation 31 décembre</router-link>
-					</div>
 				</div>
 			</div>
 			<div class="col-sm-6">
 				<img class="d-block w-100" src="@/assets/photos/7.jpg" alt="Image de présentation du buffet">
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="container d-flex flex-row pt-5 pb-5 mt-5 mb-5 mr-sm-3" id="horaires">
 		<div class="row">
@@ -265,7 +295,6 @@ export default {
 .menu-div {
 	text-align: center;
 }
-
 .bouton-menu {
 	text-align: center;
 	color: #444;
@@ -276,7 +305,6 @@ export default {
 	cursor: pointer;
 	text-decoration: none;
 }
-
 .bouton-menu:hover {
 	color: #777;
 }
@@ -348,11 +376,6 @@ export default {
 }
 
 @media screen and (max-width: 575px) {
-	h1 {
-		font-size: 2.5rem;
-		padding-bottom: 10px;
-	}
-
 	.little-card {
 		display: block;
 		margin-left: auto;

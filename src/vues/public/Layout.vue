@@ -1,18 +1,18 @@
 <template>
     <div class="public">
-        <public-titre/>
+        <PublicTitreMenu/>
         <router-view/>
-        <public-footer/>
+        <PublicFooter/>
     </div>
 </template>
 
 <script>
-import PublicTitre from '@/components/PublicTitre.vue';
+import PublicTitreMenu from '@/components/PublicTitreMenu.vue';
 import PublicFooter from '@/components/PublicFooter.vue';
 export default {
     name: "PublicLayout",
     components: {
-        PublicTitre,
+        PublicTitreMenu,
         PublicFooter,
     },
 }

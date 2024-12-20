@@ -4,6 +4,9 @@ import * as Public from '@/vues/public'
 
 import * as Admin from '@/vues/admin'
 
+import Login from '@/vues/auth/Login.vue'
+import { authGuard } from '@/vues/auth/auth-guard.js';
+
 const routes = [
 	{
 		path: '/',
@@ -12,22 +15,26 @@ const routes = [
 		children: [
 			{ path: '/', name: 'Home', component: Public.Home },
 			{ path: '/Reservation', name: 'Reservation', component: Public.Reservation },
-			{ path: '/Reservation31decembre', name: 'Reservation31decembre', component: Public.Reservation31decembre },
 		]
 	},
 	{
-		path: '/admin',
+		path: '/',
 		name: 'AdminLayout',
+		beforeEnter: authGuard,
 		component: Admin.AdminLayout,
 		children: [
-			{ path: 'Dashboard', name: 'Dashboard', component: Admin.Dashboard },
-			{ path: '/users/index', component: Admin.UserIndex },
-			{ path: '/users/edit/:id', component: Admin.UserEdit },
-			{ path: '/users/add', component: Admin.UserAdd },
+			{ path: '/admin/Dashboard', name: 'Dashboard', component: Admin.Dashboard },
+			{ path: '/admin/users/UserIndex', component: Admin.UserIndex },
+			{ path: '/admin/users/UserEdit/:id(\\d+)', component: Admin.UserEdit, props: true },
+			{ path: '/admin/users/UserAdd', component: Admin.UserAdd },
 
-			{ path: '/cocktails/CocktailIndex', component: Admin.CocktailIndex },
-			{ path: '/cocktails/CocktailEdit', component: Admin.CocktailEdit },
+			{ path: '/admin/cocktails/CocktailIndex', component: Admin.CocktailIndex },
+			{ path: '/admin/cocktails/CocktailEdit', component: Admin.CocktailEdit },
+			{ path: '/:pathMatch(.*)*', component: Admin.Dashboard },
 		]
+	},
+	{
+		path: '/auth/Login', name: 'Login', component: Login
 	},
 	{
 		path: '/:pathMatch(.*)*', component: Public.NotFound
