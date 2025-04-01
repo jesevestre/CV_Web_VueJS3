@@ -1,0 +1,167 @@
+/* Général */
+html,
+body {
+    background-color: #f8f9fa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    background-color: #f8f9fa;
+    text-align: justify;
+    font-size: 115%;
+
+    min-height: 89.6vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.footer {
+    position: relative;
+}
+.maPhoto {
+    display: block;
+    width: 30%;
+    margin-top: 50px;
+    margin-left: 30%;
+}
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+h4 {
+    color: #333;
+}
+ul {
+    list-style-type: none;
+}
+
+/* Onglets de navigation */
+.onglet-titre {
+    margin-left: -32px !important;
+    margin-right: 0px !important;
+    margin: 0 auto;
+}
+.onglet-titre-tabs {
+    display: flex;
+}
+.onglet-titre-tabs li {
+    flex: 1;
+    border: 1px solid #ddd;
+}
+.onglet-titre-tabs a {
+    display: block;
+    background-color: #FFF;
+    color: #0F1419;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+.onglet-titre-tabs a:hover {
+    background: #F1F1F1;
+    color: #333;
+}
+.onglet-titre-tabs .active a {
+    color: #FFF;
+    background-color: #63C7B2;
+}
+.onglet-titre-tabs .active:hover a {
+    color: #FFF;
+    background-color: #56ab97;
+}
+.tabs-content {
+    position: relative;
+    min-height: 50vh;
+    z-index: 3;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* Effet de transition sur  les onglets de navigation */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Accessiblité mobile/tablette/PC */
+@media screen and (max-width: 950px) {
+    .maPhoto {
+        display: block;
+        width: 65%;
+        margin-top: 50px;
+        margin-left: 15%;
+    }
+
+}
+
+/* EFFET NEON DANS LA PAGE LOISIRS */
+.image_sport {
+    margin-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #0F1419;
+
+    box-shadow:
+        0 0 2vw 0vw #7476FF,
+        0 0 1vw 0.4vw #0408fb,
+        inset 0 0 .5vw 0.2vw #7476FF,
+        inset 0 0 .2vw 0.2vw #3134FF,
+        inset 0 0 .25vw 0.2vw #0408FB;
+    border-radius: 15px;
+}
+
+.image_sport img {
+    max-width: 100%;
+    filter:
+        drop-shadow(0 0.15vw 0.30vw #008000) drop-shadow(0 0.15vw 0.30vw #8A8942);
+    animation: saxo-blink 2s infinite alternate;
+}
+
+@keyframes saxo-blink {
+
+    0%,
+    9%,
+    15%,
+    79%,
+    83%,
+    100% {
+        filter:
+            drop-shadow(0 0.15vw 0.30vw #008000) drop-shadow(0 0.15vw 0.30vw #8A8942);
+    }
+
+    10%,
+    14%,
+    80%,
+    82% {
+        filter: none;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .image_sport {
+        padding-left: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ANIMATION PARAGRAPHE */
+.reveal {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}

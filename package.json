@@ -1,0 +1,39 @@
+{
+	"name": "plaisirdailleurs",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"postbuild": "mkdir .\\dist\\pages\\profil && cp .\\dist\\index.html .\\dist\\pages\\profil\\index.html && mkdir .\\dist\\pages\\Experiences && cp .\\dist\\index.html .\\dist\\pages\\Experiences\\index.html && mkdir .\\dist\\pages\\Competences && cp .\\dist\\index.html .\\dist\\pages\\Competences\\index.html && mkdir .\\dist\\pages\\Formations && cp .\\dist\\index.html .\\dist\\pages\\Formations\\index.html && mkdir .\\dist\\pages\\Loisirs && cp .\\dist\\index.html .\\dist\\pages\\Loisirs\\index.html && mkdir .\\dist\\pages\\Contact && cp .\\dist\\index.html .\\dist\\pages\\contact\\index.html && mkdir .\\dist\\pages\\MentionLegales && cp .\\dist\\index.html .\\dist\\pages\\MentionLegales\\index.html && mkdir .\\dist\\pages\\PlanDuSite && cp .\\dist\\index.html .\\dist\\pages\\PlanDuSite\\index.html && mkdir .\\dist\\Home && cp .\\dist\\index.html .\\dist\\Home\\index.html",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.6.0",
+		"@fortawesome/free-brands-svg-icons": "^6.7.2",
+		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"@fortawesome/vue-fontawesome": "^3.0.0-5",
+		"axios": "^1.7.9",
+		"boostrap": "^2.0.0",
+		"bootstrap": "^5.3.3",
+		"dotenv": "^16.4.7",
+		"express": "^4.21.2",
+		"gsap": "^3.12.7",
+		"mysql": "^2.18.1",
+		"vue": "^3.5.12",
+		"vue-router": "^4.5.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.26.0",
+		"@babel/preset-env": "^7.26.0",
+		"@vitejs/plugin-vue": "^5.1.4",
+		"babel-loader": "^9.2.1",
+		"vite": "^5.4.10"
+	},
+	"description": "This template should help get you started developing with Vue 3 in Vite.",
+	"main": "vite.config.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
