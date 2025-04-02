@@ -1,7 +1,7 @@
 <template>
     <div class="PlanDuSite container mb-5">
 
-        <h1 class="mt-5 mb-5">Plan du site <fa :icon="['fas', 'sitemap']" /></h1>
+        <h1 class="mt-5 mb-5">Plan du site <font-awesome-icon :icon="['fas', 'sitemap']" /></h1>
 
         <div class="text-center">
             <div class="table-responsive">
@@ -16,10 +16,10 @@
                         </tr>
                         <tr>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
-                                <fa :icon="['fas', 'arrow-down']" />
+                                <font-awesome-icon :icon="['fas', 'arrow-down']" />
                             </td>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
-                                <fa :icon="['fas', 'arrow-down']" />
+                                <font-awesome-icon :icon="['fas', 'arrow-down']" />
                             </td>
                         </tr>
                         <tr>
@@ -36,7 +36,7 @@
                         </tr>
                         <tr>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
-                                <fa :icon="['fas', 'arrow-down']" />
+                                <font-awesome-icon :icon="['fas', 'arrow-down']" />
                             </td>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
                             </td>
@@ -73,7 +73,7 @@
                         </tr>
                         <tr>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
-                                <fa :icon="['fas', 'arrow-down']" />
+                                <font-awesome-icon :icon="['fas', 'arrow-down']" />
                             </td>
                             <td class="pt-3 pb-3 pt-md-5 pb-md-5">
                             </td>

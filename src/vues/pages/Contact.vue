@@ -1,7 +1,7 @@
 <template>
     <div class="Contact container mb-5">
         
-        <h1 class="mt-5 mb-5">Contact <fa :icon="['fas', 'envelope']" /></h1>
+        <h1 class="mt-5 mb-5">Contact <font-awesome-icon :icon="['fas', 'envelope']" /></h1>
 
         <form @submit.prevent="sendMessage">
             <input v-model="form.name" type="text" class="form-control mt-5 mb-5" placeholder="Votre prénom et nom" required />

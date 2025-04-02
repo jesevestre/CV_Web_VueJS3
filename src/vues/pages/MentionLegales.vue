@@ -1,7 +1,7 @@
 <template>
     <div class="MentionLegales container">
 
-        <h1 class="mt-5 mb-5">Mentions légales <fa :icon="['fas', 'file-contract']" /></h1>
+        <h1 class="mt-5 mb-5">Mentions légales <font-awesome-icon :icon="['fas', 'file-contract']" /></h1>
 
         <p>Le présent site est la propriété de <b>Jean-Baptiste SEVESTRE</b>, particulier ayant comme objectif une meilleure visibilité de ses compétences, expériences et diplômes obtenus. </p>
 

@@ -41,7 +41,7 @@
                     </router-link>
 				</div>
 				<div class="burger-menu-button" @click="toggleMenu">
-					<fa :icon="isMenuOpen ? ['fas', 'xmark'] : ['fas', 'bars']" />
+					<font-awesome-icon :icon="isMenuOpen ? ['fas', 'xmark'] : ['fas', 'bars']" />
 				</div>
 			</div>
 
@@ -185,6 +185,7 @@ header {
 	overflow: hidden;
 	transition: height 0.3s ease-out, opacity 0.2s ease-out;
 	opacity: 0;
+	z-index: 10;
 }
 .burger-menu li {
 	display: flex;

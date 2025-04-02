@@ -2,7 +2,7 @@
     <div class="Loisirs container mb-5">
 
         <h1 class="mt-5 mb-5">Loisirs
-            <fa :icon="['fas', 'sun']" />
+            <font-awesome-icon :icon="['fas', 'sun']" />
         </h1>
 
         <div class="onglet-titre">
@@ -36,9 +36,9 @@
 import { markRaw } from 'vue';
 import '@/assets/css/PagesStyle.css';
 
-import BenevolatContent from '@/components/pages/BenevolatContent.vue';
-import SportContent from '@/components/pages/SportContent.vue';
-import AutreContent from '@/components/pages/AutreContent.vue';
+import BenevolatContent from '@/components/pages/BenevolatsContent.vue';
+import SportContent from '@/components/pages/SportsContent.vue';
+import AutreContent from '@/components/pages/AutresContent.vue';
 
 export default {
     name: 'Loisirs',

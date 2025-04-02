@@ -40,6 +40,7 @@ ul {
 .onglet-titre {
     margin-left: -32px !important;
     margin-right: 0px !important;
+    margin-bottom: -5px !important;
     margin: 0 auto;
 }
 .onglet-titre-tabs {
@@ -74,10 +75,10 @@ ul {
 .tabs-content {
     position: relative;
     min-height: 50vh;
-    z-index: 3;
     padding: 20px;
     background-color: #FFF;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 1;
 }
 
 /* Effet de transition sur  les onglets de navigation */
@@ -151,6 +152,12 @@ ul {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .onglet-titre-tabs {
+        display: block;
     }
 }
 

@@ -50,12 +50,12 @@
 		<ul class="medias">
 			<li class="bulle">
 				<a class="bulle_a" href="https://www.linkedin.com/in/jb-sevestre/" target="_blank">
-					<fa :icon="['fab', 'linkedin-in']" />
+					<font-awesome-icon :icon="['fab', 'linkedin-in']" />
 				</a>
 			</li>
 			<li class="bulle">
 				<a class="bulle_a" href="https://github.com/jesevestre" target="_blank">
-					<fa :icon="['fab', 'github']" />
+					<font-awesome-icon :icon="['fab', 'github']" />
 				</a>
 			</li>
 		</ul>
