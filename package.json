@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"postbuild": "mkdir .\\dist\\pages\\profil && cp .\\dist\\index.html .\\dist\\pages\\profil\\index.html && mkdir .\\dist\\pages\\Experiences && cp .\\dist\\index.html .\\dist\\pages\\Experiences\\index.html && mkdir .\\dist\\pages\\Competences && cp .\\dist\\index.html .\\dist\\pages\\Competences\\index.html && mkdir .\\dist\\pages\\Formations && cp .\\dist\\index.html .\\dist\\pages\\Formations\\index.html && mkdir .\\dist\\pages\\Loisirs && cp .\\dist\\index.html .\\dist\\pages\\Loisirs\\index.html && mkdir .\\dist\\pages\\Contact && cp .\\dist\\index.html .\\dist\\pages\\contact\\index.html && mkdir .\\dist\\pages\\MentionLegales && cp .\\dist\\index.html .\\dist\\pages\\MentionLegales\\index.html && mkdir .\\dist\\pages\\PlanDuSite && cp .\\dist\\index.html .\\dist\\pages\\PlanDuSite\\index.html && mkdir .\\dist\\Home && cp .\\dist\\index.html .\\dist\\Home\\index.html",
+		"postbuild": "mkdir .\\dist\\pages\\Profil && cp .\\dist\\index.html .\\dist\\pages\\Profil\\index.html && mkdir .\\dist\\pages\\Experiences && cp .\\dist\\index.html .\\dist\\pages\\Experiences\\index.html && mkdir .\\dist\\pages\\Competences && cp .\\dist\\index.html .\\dist\\pages\\Competences\\index.html && mkdir .\\dist\\pages\\Formations && cp .\\dist\\index.html .\\dist\\pages\\Formations\\index.html && mkdir .\\dist\\pages\\Loisirs && cp .\\dist\\index.html .\\dist\\pages\\Loisirs\\index.html && mkdir .\\dist\\pages\\Contact && cp .\\dist\\index.html .\\dist\\pages\\contact\\index.html && mkdir .\\dist\\pages\\MentionLegales && cp .\\dist\\index.html .\\dist\\pages\\MentionLegales\\index.html && mkdir .\\dist\\pages\\PlanDuSite && cp .\\dist\\index.html .\\dist\\pages\\PlanDuSite\\index.html && mkdir .\\dist\\Home && cp .\\dist\\index.html .\\dist\\Home\\index.html",
 		"preview": "vite preview"
 	},
 	"dependencies": {
@@ -17,6 +17,7 @@
 		"axios": "^1.7.9",
 		"boostrap": "^2.0.0",
 		"bootstrap": "^5.3.3",
+		"chart.js": "^4.4.8",
 		"dotenv": "^16.4.7",
 		"express": "^4.21.2",
 		"gsap": "^3.12.7",

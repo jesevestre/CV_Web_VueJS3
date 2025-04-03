@@ -36,14 +36,21 @@
             <ul>
                 <li>• Ma mission était la réalisation d'une étude visant la réduction du temps de transfert des données lors de la production des véhicules.</li>
                 <li>• Présentation de mes travaux devant mon groupe projet de 18 personnes avec la présence des responsables du Groupe Renault qui décident des investissements.</li>
-                <li><a href="/fichiers/Rapport_De_Stage_Jean-Baptiste_SEVESTRE_IUT.pdf" download="Rapport_De_Stage_Jean-Baptiste_SEVESTRE_IUT.pdf">Télécharger le rapport</a></li>
-                <li><a href="/fichiers/Oral_Jean-Baptiste_SEVESTRE_IUT.pptx" download>Télécharger la présentation</a></li>
+                <li><a href="/fichiers/Rapport_De_Stage_Jean-Baptiste_SEVESTRE_IUT.pdf" download="Rapport_De_Stage_Jean-Baptiste_SEVESTRE_IUT.pdf" target="_blank">Télécharger le rapport</a></li>
+                <li><a href="/fichiers/Oral_Jean-Baptiste_SEVESTRE_IUT.pptx" download target="_blank">Télécharger la présentation</a></li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
                 <button class="btn btn-primary fw-bold col-6 col-sm-4 mb-2">Télécharger le rapport</button>
                 <span class="col-0 col-sm-1"></span>
-                <button class="btn btn-success fw-bold col-6 col-sm-4 mb-2">Télécharger le rapport</button>
+                <button @click="telechargerFichier" class="btn btn-success fw-bold col-6 col-sm-4 mb-2">
+                    Télécharger le rapport
+                </button>
             </div>
+
+            <button @click="telechargerFichier2">
+                Télécharger la présentation
+            </button>
+
         </div>
 
         <div class="pb-3">
@@ -58,7 +65,34 @@
 
 <script>
 export default {
-    name: 'StagesContent',
+  name: 'StagesContent',
+
+  methods: {
+    telechargerFichier() {
+        const lien = document.createElement("a");
+        lien.href = "/fichiers/Oral_Jean-Baptiste_SEVESTRE_IUT.pptx";
+        lien.setAttribute("download", "Oral_Jean-Baptiste_SEVESTRE_IUT.pptx");
+        document.body.appendChild(lien);
+        lien.click();
+        document.body.removeChild(lien);
+    },
+
+    async telechargerFichier2() {
+      const response = await fetch('/fichiers/Oral_Jean-Baptiste_SEVESTRE_IUT.pptx');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      
+      const lien = document.createElement("a");
+      lien.href = url;
+      lien.setAttribute("download", "Oral_Jean-Baptiste_SEVESTRE_IUT.pptx");
+      
+      document.body.appendChild(lien);
+      lien.click();
+      
+      document.body.removeChild(lien);
+      window.URL.revokeObjectURL(url);
+    }
+  }
 };
 </script>
 

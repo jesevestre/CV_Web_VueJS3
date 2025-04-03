@@ -43,7 +43,7 @@
 
 <script>
 export default {
-    name: 'AutreContent'
+    name: 'ProfessionnellesContent'
 };
 </script>
 

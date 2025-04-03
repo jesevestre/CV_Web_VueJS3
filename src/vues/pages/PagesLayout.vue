@@ -13,6 +13,7 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: 'PageLayout',
+    
     components: {
         Footer,
         Menu,
