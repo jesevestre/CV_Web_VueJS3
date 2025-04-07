@@ -60,6 +60,10 @@
 			</li>
 		</ul>
 
+        <div class="divMaPhoto">
+            <img src="@/assets/images/PhotoCV.jpg" class="maPhoto" alt="Ma photo de profil" />
+        </div>
+
         <Footer />
 
 	</div>
@@ -156,12 +160,6 @@ onMounted(() => {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-}
-
-/* Pied de page */
-footer {
-    position: fixed;
-    bottom: 0;
 }
 
 /* Lignes */
@@ -278,6 +276,24 @@ h1 span {
 	margin-top: 4px;
 }
 
+/* Photo de profil */
+.divMaPhoto {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.maPhoto {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #F1F1F1;
+}
+
 /* Autorisation des cookies */
 .banniere {
     background: rgba(35, 35, 35, 0.970);
@@ -388,6 +404,12 @@ input:checked[type="checkbox"]:before {
     display: none;
 }
 
+/* Pied de page */
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
 /* Accessiblité mobile/tablette/PC */
 @media screen and (max-width: 1747px) {
     h1 {
@@ -418,6 +440,13 @@ input:checked[type="checkbox"]:before {
     .button-banniere a {
         margin-left: -50%;
     }
+    .divMaPhoto {
+        bottom: 5%;
+    }
+    .maPhoto {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media screen and (max-width: 720px) {
@@ -443,8 +472,14 @@ input:checked[type="checkbox"]:before {
     h1 {
         font-size: 4ch;
     }
+    .l1 {
+        width: 100px;
+    }
+    .l2 {
+        width: 40px;
+    }
     .container-btns {
-        top: 100px;
+        top: 25px;
         margin-right: 20%;
     }
     .medias {
@@ -460,11 +495,8 @@ input:checked[type="checkbox"]:before {
         font-size: 15px;
         width: 150px;
     }
-    .l1 {
-        width: 100px;
-    }
-    .l2 {
-        width: 40px;
+    .divMaPhoto {
+        bottom: 5%;
     }
 }
 

@@ -16,18 +16,13 @@ body {
     flex-direction: column;
     flex: 1;
 }
-.footer {
-    position: relative;
-}
-.maPhoto {
-    display: block;
-    width: 30%;
-    margin-top: 50px;
-    margin-left: 30%;
-}
 h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    color: #333;
+}
+.svg-inline--fa{
+    color: #333;
 }
 h4 {
     color: #333;
@@ -81,6 +76,11 @@ ul {
     z-index: 1;
 }
 
+/* Footer */
+.footer {
+    position: relative;
+}
+
 /* Effet de transition sur  les onglets de navigation */
 .fade-enter-active, .fade-leave-active {
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -89,17 +89,6 @@ ul {
 .fade-enter-from, .fade-leave-to {
     opacity: 0;
     transform: translateY(10px);
-}
-
-/* Accessiblité mobile/tablette/PC */
-@media screen and (max-width: 950px) {
-    .maPhoto {
-        display: block;
-        width: 65%;
-        margin-top: 50px;
-        margin-left: 15%;
-    }
-
 }
 
 /* EFFET NEON DANS LA PAGE LOISIRS */
@@ -118,16 +107,13 @@ ul {
         inset 0 0 .25vw 0.2vw #0408FB;
     border-radius: 15px;
 }
-
 .image_sport img {
     max-width: 100%;
     filter:
         drop-shadow(0 0.15vw 0.30vw #008000) drop-shadow(0 0.15vw 0.30vw #8A8942);
     animation: saxo-blink 2s infinite alternate;
 }
-
 @keyframes saxo-blink {
-
     0%,
     9%,
     15%,
@@ -137,7 +123,6 @@ ul {
         filter:
             drop-shadow(0 0.15vw 0.30vw #008000) drop-shadow(0 0.15vw 0.30vw #8A8942);
     }
-
     10%,
     14%,
     80%,
@@ -146,6 +131,7 @@ ul {
     }
 }
 
+/* Accessiblité mobile/tablette/PC */
 @media screen and (min-width: 990px) {
     .image_sport {
         padding-left: 15%;
@@ -159,16 +145,4 @@ ul {
     .onglet-titre-tabs {
         display: block;
     }
-}
-
-/* ANIMATION PARAGRAPHE */
-.reveal {
-    opacity: 0;
-    transform: translateY(-30px);
-}
-
-.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: 2s cubic-bezier(.5, 0, 0, 1);
 }

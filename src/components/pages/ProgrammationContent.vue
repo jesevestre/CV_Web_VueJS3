@@ -1,14 +1,14 @@
 <template>
     <div>
+        <div class="row mt-3">
 
-        <div class="row col-12 col-md-8 pt-3 pb-3">
-            <div class="col-5 d-flex align-items-center justify-content-center">
+            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
                 <button class="btn btn-success fw-bold">PHP</button>
             </div>
-            <div class="col-2 d-flex align-items-center justify-content-left">
+            <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-5">
+            <div class="col-6 col-lg-2 d-flex align-items-center">
                 <ul>
                     <li>
                         5.0
@@ -24,16 +24,14 @@
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <div class="row col-12 col-md-8 pb-3">
-            <div class="col-5 d-flex align-items-center justify-content-center">
+            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
                 <button class="btn btn-primary fw-bold">SQL</button>
             </div>
-            <div class="col-2 d-flex align-items-center justify-content-left">
+            <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-5">
+            <div class="col-6 col-lg-2 d-flex align-items-center">
                 <ul>
                     <li>
                         MySQL
@@ -49,16 +47,18 @@
                     </li>
                 </ul>
             </div>
+
         </div>
 
-        <div class="row col-12 col-md-8 pb-3">
-            <div class="col-5 d-flex align-items-center justify-content-center">
+        <div class="row mt-3">
+
+            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
                 <button class="btn btn-info text-white fw-bold">JavaScript</button>
             </div>
-            <div class="col-2 d-flex align-items-center justify-content-left">
+            <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-5">
+            <div class="col-6 col-lg-2 d-flex align-items-center">
                 <ul>
                     <li>
                         Vanilla
@@ -71,16 +71,14 @@
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <div class="row col-12 col-md-8 pb-3">
-            <div class="col-5 d-flex align-items-center justify-content-center">
+            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
                 <button class="btn btn-secondary fw-bold">Framework</button>
             </div>
-            <div class="col-2 d-flex align-items-center justify-content-left">
+            <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-5">
+            <div class="col-6 col-lg-2 d-flex align-items-center">
                 <ul>
                     <li>
                         VueJS3

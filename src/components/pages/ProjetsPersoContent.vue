@@ -67,10 +67,10 @@
         <div class="pb-5">
             <span><b>Développement d'une application Android pour les personnes atteintes de la maladie d'Alzheimer</b></span>
             <ul>
-                <li>• Développement d'une application Android pour les personnes atteintes de la maladie d'Alzheimer comprenant une montre connectée et une application aidant. L'objectif de ce projet est que la personne âgée puisse se repérer et être guidée dans l'espace public. De plus un outil de reconnaissance faciale a été mis en place pour qu'elle puisse reconnaître ses proches. <a href="fichierTelechargeable/Rapport-Finale_Don'tForget.pdf" download="Rapport-Finale_Don'tForget.pdf">Télécharger le rapport</a></li>
+                <li>• Développement d'une application Android pour les personnes atteintes de la maladie d'Alzheimer comprenant une montre connectée et une application aidant. L'objectif de ce projet est que la personne âgée puisse se repérer et être guidée dans l'espace public. De plus un outil de reconnaissance faciale a été mis en place pour qu'elle puisse reconnaître ses proches.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <button class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4">Télécharger le rapport</button>
+                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" @click="Rapport_Final_DontForget">Télécharger le rapport</a>
             </div>
         </div>
 
@@ -85,11 +85,10 @@
         <div class="pb-3">
             <span><b>Création d'un globe terrestre à persistance rétinienne</b></span>
             <ul>
-                <li>• Création d'un globe terrestre à persistance rétinienne à LED <a href="fichierTelechargeable/Projet_Tutoré_GlobeLED_SEVESTRE.pdf" download="Projet_Tutoré_GlobeLED_SEVESTRE.pdf">Télécharger le rapport</a>
-                </li>
+                <li>• Création d'un globe terrestre à persistance rétinienne à LED.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <button class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4">Télécharger le rapport</button>
+                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" @click="Projet_Tutoré_GlobeLED_SEVESTRE">Télécharger le rapport</a>
             </div>
         </div>
 
@@ -98,7 +97,26 @@
 
 <script>
 export default {
-    name: 'ProjetsPersoContent'
+    name: 'ProjetsPersoContent',
+
+    methods: {
+        Rapport_Final_DontForget() {
+            const lien = document.createElement('a');
+            lien.href = 'http://jsevestre02.free.fr/fichiers/Rapport_Final_DontForget.pdf';
+            lien.setAttribute('download', 'Rapport_Final_DontForget.pdf');
+            document.body.appendChild(lien);
+            lien.click();
+            document.body.removeChild(lien);
+        },
+        Projet_Tutoré_GlobeLED_SEVESTRE() {
+            const lien = document.createElement('a');
+            lien.href = 'http://jsevestre02.free.fr/fichiers/Projet_Tutoré_GlobeLED_SEVESTRE.pdf';
+            lien.setAttribute('download', 'Projet_Tutoré_GlobeLED_SEVESTRE.pdf');
+            document.body.appendChild(lien);
+            lien.click();
+            document.body.removeChild(lien);
+        },
+    }
 };
 </script>
 

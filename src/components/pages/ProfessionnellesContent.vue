@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <div class="pb-3">
+        <div class="pb-5">
             <span><b>Développeur web, Média-immo, Corbeil-Essonnes (91)</b> Novembre 2022 - Avril 2025</span>
             <ul>
                 <li>•	Reprendre l’évolution de l’application Mairie-Urba permettant la <b>transmission dématérialisée et instantanée</b> des autorisations d’urbanisme entre les demandeurs et les mairies.</li>
@@ -14,9 +14,12 @@
 
                 <li>•	<b>Former</b> deux collègues me rejoignant sur le projet.</li>
             </ul>
+            <div class="row col-12 align-items-center justify-content-center">
+                <a href="https://mairie-urba.fr/landing" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">mairie-urba.fr</a>
+            </div>
         </div>
 
-        <div class="pb-3">
+        <div class="pb-5">
             <span><b>Ingénieur développeur, CEA, Saclay (91)</b> Juillet 2021 - Juillet 2022</span>
             <ul>
                 <li>•	Migrer deux applications en PowerBuilder vers le web pour <b>suivre et visualiser</b> l’évolution des projets de recherche via l'utilisation de <b>workflow</b>, aboutissant à la création d’un <b>contrat</b>.</li>
@@ -25,6 +28,9 @@
 
                 <li>•	Projets utilisant APACHE2, <b>MariaDB</b> et <b>JavaScript</b> (AJAX). Migrer vers un nouveau serveur en <b>PHP 7.4</b> avec l’aide d’un info. réseau et admin système. Changer l’<b>encodage</b> des applications en ISO vers l’<b>UTF8</b>.</li>
             </ul>
+            <div class="row col-12 align-items-center justify-content-center">
+                <a href="https://www.cea.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">cea.fr</a>
+            </div>
         </div>
 
         <div class="pb-3">
