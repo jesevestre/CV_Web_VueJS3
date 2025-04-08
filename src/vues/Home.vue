@@ -12,49 +12,49 @@
 				<span>SEVESTRE</span>
 			</h1>
 
-			<div class="container-btns">
-				<router-link to="/pages/Profil" class="btn-first b1">
+			<div class="container-btns" role="navigation" aria-label="Navigation principale">
+				<router-link to="/pages/Profil" class="btn-first b1" role="button" aria-label="Navigation vers le profil">
 					{{ labels.profil }}
 				</router-link>
-				<router-link to="/pages/Experiences" class="btn-first b2">
+				<router-link to="/pages/Experiences" class="btn-first b2" role="button" aria-label="Navigation vers les expériences">
 					{{ labels.experiences }}
 				</router-link>
-				<router-link to="/pages/Competences" class="btn-first b3">
+				<router-link to="/pages/Competences" class="btn-first b3" role="button" aria-label="Navigation vers les compétences">
 					{{ labels.competences }}
 				</router-link>
-				<router-link to="/pages/Formations" class="btn-first b4">
+				<router-link to="/pages/Formations" class="btn-first b4" role="button" aria-label="Navigation vers les formations">
 					{{ labels.formations }}
 				</router-link>
-				<router-link to="/pages/Loisirs" class="btn-first b5">
+				<router-link to="/pages/Loisirs" class="btn-first b5" role="button" aria-label="Navigation vers les loisirs">
 					{{ labels.loisirs }}
 				</router-link>
 			</div>
 			
 		</div>
 
-		<div class="switch-mode">
-			<img src="@/assets/images/soleil_clair.png" class="soleil_clair" @click="toggleDarkMode" />
-			<img src="@/assets/images/soleil_fonce.png" class="soleil_fonce" @click="toggleDarkMode" />
-			<input type="checkbox" id="clickDarkMode" v-model="isDarkMode" />
+		<div class="switch-mode" aria-label="Activer/Désactiver le mode sombre">
+			<img src="@/assets/images/soleil_clair.png" class="soleil_clair" @click="toggleDarkMode" alt="Icône soleil clair" />
+			<img src="@/assets/images/soleil_fonce.png" class="soleil_fonce" @click="toggleDarkMode" alt="Icône soleil foncé" />
+			<input type="checkbox" id="clickDarkMode" v-model="isDarkMode" aria-label="Basculer le mode sombre" />
 		</div>
 
 		<div>
-			<a @click="changeLangage">
-				<img src="@/assets/images/drapeauFR.jpg" class="drapeau" alt="Changer en Français" />
-			</a>
-			<a @click="changeLangage">
-				<img src="@/assets/images/drapeauUSA2.png" class="drapeau" alt="Switch to English" />
-			</a>
+			<a @click="changeLangage" aria-label="Changer la langue en français">
+				<img src="@/assets/images/drapeauFR.jpg" class="drapeau" alt="Drapeau Français" />
+            </a>
+			<a @click="changeLangage" aria-label="Switch the langage to English">
+				<img src="@/assets/images/drapeauUSA2.png" class="drapeau" alt="American flag" />
+            </a>
 		</div>
 
 		<ul class="medias">
 			<li class="bulle">
-				<a class="bulle_a" href="https://www.linkedin.com/in/jb-sevestre/" target="_blank">
+				<a class="bulle_a" href="https://www.linkedin.com/in/jb-sevestre/" aria-label="Lien internet vers LinkedIn" target="_blank">
 					<font-awesome-icon :icon="['fab', 'linkedin-in']" />
 				</a>
 			</li>
 			<li class="bulle">
-				<a class="bulle_a" href="https://github.com/jesevestre" target="_blank">
+				<a class="bulle_a" href="https://github.com/jesevestre" aria-label="Lien internet vers GitHub" target="_blank">
 					<font-awesome-icon :icon="['fab', 'github']" />
 				</a>
 			</li>
@@ -292,6 +292,12 @@ h1 span {
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #F1F1F1;
+}
+
+/* Pour navigation interactive pour nav au clavier */
+.btn-first:focus {
+    outline: 3px solid #FFD700;
+    background-color: #333;
 }
 
 /* Autorisation des cookies */

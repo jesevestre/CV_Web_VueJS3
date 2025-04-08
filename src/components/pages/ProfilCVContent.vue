@@ -16,7 +16,7 @@
 
                 <div class="text-center pt-1">
                     <div class="row col-12 align-items-center justify-content-center">
-                        <a class="btn btn-secondary fw-bold col-8 col-sm-6 col-md-4" @click="CV_Jean_Baptiste_SEVESTRE">Télécharger le CV</a>
+                        <a class="btn btn-secondary fw-bold col-8 col-sm-6 col-md-4" role="button" aria-label="Téléchargement du CV" @click="CV_Jean_Baptiste_SEVESTRE">Télécharger le CV</a>
                     </div>
                 </div>
             </div>

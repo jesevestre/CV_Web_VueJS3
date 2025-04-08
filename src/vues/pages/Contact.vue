@@ -4,24 +4,28 @@
         <h1 class="mt-5 mb-5">Contact <font-awesome-icon :icon="['fas', 'envelope']" /></h1>
 
         <form @submit.prevent="sendMessage">
-            <input v-model="form.name" type="text" class="form-control mt-5 mb-5" placeholder="Votre prénom et nom" required />
+            <label for="name">Nom complet :</label>
+            <input v-model="form.name" type="text" class="form-control mb-5" id="name" placeholder="Votre prénom et nom" required />
 
-            <input v-model="form.email" type="email" class="form-control mb-5" placeholder="Votre adresse email" required />
+            <label for="email">Adresse email :</label>
+            <input v-model="form.email" type="email" class="form-control mb-5" id="email" placeholder="Votre adresse email" required />
 
-            <input v-model="form.subject" type="text" class="form-control mb-5" placeholder="Titre du sujet" required />
+            <label for="subject">Sujet :</label>
+            <input v-model="form.subject" type="text" class="form-control mb-5" id="subject" placeholder="Titre du sujet" required />
 
-            <textarea v-model="form.message" class="form-control mb-5" rows="5" placeholder="Votre message" required></textarea>
+            <label for="message">Message :</label>
+            <textarea v-model="form.message" class="form-control mb-5" rows="5" id="message" placeholder="Votre message" required></textarea>
             
             <div class="d-grid gap-2 col-4 col-sm-3 col-md-2 mx-auto boutonContact">
-                <button type="submit" class="btn contact" :disabled="loading">
+                <button type="submit" class="btn contact" :disabled="loading" aria-label="Envoyer le message">
                     {{ loading ? "Envoi..." : "Envoyer" }}
                 </button>
             </div>
 
-            <div v-if="successMessage" class="alert alert-success mt-3">
+            <div v-if="successMessage" class="alert alert-success mt-3" role="status" aria-live="polite">
                 {{ successMessage }}
             </div>
-            <div v-if="errorMessage" class="alert alert-warning mt-3">
+            <div v-if="errorMessage" class="alert alert-warning mt-3" role="alert" aria-live="assertive">
                 {{ errorMessage }}
             </div>
         </form>

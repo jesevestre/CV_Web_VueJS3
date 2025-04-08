@@ -14,9 +14,11 @@
                 </li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <button class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" @click="Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master">Télécharger le rapport</button>
+                <a class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger le mémoire de stage de master" @click="Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master">Télécharger le rapport</a>
                 <span class="col-0 col-sm-1"></span>
-                <button class="btn btn-success fw-bold col-6 col-sm-4 mb-2" @click="Oral_Jean_Baptiste_SEVESTRE_Master">Télécharger la présentation</button>
+                <a class="btn btn-success fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger la présentation orale de master" @click="Oral_Jean_Baptiste_SEVESTRE_Master">Télécharger la présentation</a>
             </div>
         </div>
 
@@ -31,9 +33,11 @@
                     de proposition.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" @click="Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence">Télécharger le rapport</a>
+                <a class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger le mémoire de stage de licence" @click="Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence">Télécharger le rapport</a>
                 <span class="col-0 col-sm-1"></span>
-                <a class="btn btn-success fw-bold col-6 col-sm-4 mb-2" @click="Oral_Jean_Baptiste_SEVESTRE_Licence">Télécharger la présentation</a>
+                <a class="btn btn-success fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger la présentation orale de licence" @click="Oral_Jean_Baptiste_SEVESTRE_Licence">Télécharger la présentation</a>
             </div>
         </div>
 
@@ -47,11 +51,13 @@
                     responsables du Groupe Renault qui décident des investissements.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" @click="Rapport_De_Stage_Jean_Baptiste_SEVESTRE_IUT">
+                <a class="btn btn-primary fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger le mémoire de stage d'IUT" @click="Rapport_De_Stage_Jean_Baptiste_SEVESTRE_IUT">
                     Télécharger le rapport
                 </a>
                 <span class="col-0 col-sm-1"></span>
-                <a class="btn btn-success fw-bold col-6 col-sm-4 mb-2" @click="Oral_Jean_Baptiste_SEVESTRE_IUT">
+                <a class="btn btn-success fw-bold col-6 col-sm-4 mb-2" role="button"
+                aria-label="Télécharger la présentation orale d'IUT" @click="Oral_Jean_Baptiste_SEVESTRE_IUT">
                     Télécharger la présentation
                 </a>
             </div>

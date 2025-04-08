@@ -3,7 +3,7 @@
 
         <div class="row pb-5">
             <div class="col-4 d-flex align-items-center justify-content-center">
-                <button class="btn btn-success fw-bold">2025</button>
+                <p class="btn btn-success fw-bold" aria-hidden="true">2025</p>
             </div>
             <div class="col-8">
                 <b>Formation bases de données</b> (Oracle, SQL server, MySQL, PostgreSQL)<br />
@@ -14,8 +14,9 @@
         </div>
 
         <div class="row pb-5">
-            <div class="col-4 d-flex align-items-center justify-content-center"><button
-                    class="btn btn-primary fw-bold">2022</button></div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <p class="btn btn-primary fw-bold" aria-hidden="true">2022</p>
+            </div>
             <div class="col-8">
                 <b>Formation bases de données</b> (Oracle, SQL server, MySQL, PostgreSQL)<br />
                 <u>Niveau</u> - Les fondamenteaux
@@ -25,8 +26,9 @@
         </div>
 
         <div class="row pb-5">
-            <div class="col-4 d-flex align-items-center justify-content-center"><button
-                    class="btn btn-info text-white fw-bold">2018 - 2020</button></div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <p class="btn btn-info text-white fw-bold" aria-hidden="true">2018 - 2020</p>
+            </div>
             <div class="col-8">
                 <b>Master MIASHS</b> (Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales) option
                 web
@@ -36,8 +38,9 @@
         </div>
 
         <div class="row pb-5">
-            <div class="col-4 d-flex align-items-center justify-content-center"><button
-                    class="btn btn-secondary text-white fw-bold">2017 - 2018</button></div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <p class="btn btn-secondary text-white fw-bold" aria-hidden="true">2017 - 2018</p>
+            </div>
             <div class="col-8">
                 <b>Licence TNAP</b> (Technologies Nouvelles & Autonomie de la Personne)
                 <br />
@@ -46,8 +49,9 @@
         </div>
 
         <div class="row pb-5">
-            <div class="col-4 d-flex align-items-center justify-content-center"><button
-                    class="btn btn-light border-dark fw-bold">2015 - 2017</button></div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <p class="btn btn-light border-dark fw-bold" aria-hidden="true">2015 - 2017</p>
+            </div>
             <div class="col-8">
                 <b>DUT GEII</b> (Génie Electrique et Informatique Industrielle) option électronique
                 <br />
@@ -56,9 +60,9 @@
         </div>
 
         <div class="row pb-5">
-            <div class="col-4 d-flex align-items-center justify-content-center"><button
-                    class="btn btn-dark fw-bold">2017 -
-                    2018</button></div>
+            <div class="col-4 d-flex align-items-center justify-content-center">
+                <p class="btn btn-dark fw-bold" aria-hidden="true">2017 - 2018</p>
+            </div>
             <div class="col-8">
                 <b>Baccalauréat technologique</b> (STI2D) avec mention
                 <br />

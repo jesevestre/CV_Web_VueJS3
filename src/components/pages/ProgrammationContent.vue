@@ -3,7 +3,7 @@
         <div class="row mt-3">
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <button class="btn btn-success fw-bold">PHP</button>
+                <p class="btn btn-success fw-bold" aria-hidden="true">PHP</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <button class="btn btn-primary fw-bold">SQL</button>
+                <p class="btn btn-primary fw-bold" aria-hidden="true">SQL</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -53,7 +53,7 @@
         <div class="row mt-3">
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <button class="btn btn-info text-white fw-bold">JavaScript</button>
+                <p class="btn btn-info text-white fw-bold" aria-hidden="true">JavaScript</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -73,7 +73,7 @@
             </div>
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <button class="btn btn-secondary fw-bold">Framework</button>
+                <p class="btn btn-secondary fw-bold" aria-hidden="true">Framework</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />

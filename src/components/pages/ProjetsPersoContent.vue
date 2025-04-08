@@ -10,7 +10,7 @@
                 <li>• Mise en place régulièrement des <b>actualités</b> du restaurant avec une partie backend pour une gestion automatisée.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="https://plaisirsdailleurs.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">plaisirsdailleurs.fr</a>
+                <a href="https://plaisirsdailleurs.fr/" aria-label="Lien internet vers Plaisirs d'Ailleurs" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">plaisirsdailleurs.fr</a>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
                 <li>• Prospections, recherche active de <b>partenariat</b> et organisation de <b>collaborations</b>.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://samesport.free.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">smartrécup.fr</a>
+                <a href="http://samesport.free.fr/" aria-label="Lien internet vers SameSport" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">smartrécup.fr</a>
             </div>
         </div>
 
@@ -42,7 +42,7 @@
                 <li>• Site web réalisé avec le Framework VueJS-2 contenant présentement un carrousel avec un zoom image, un système d'onglet permettant d'afficher les informations hiérarchiquement, un système de routeur avec des animations entre les vues, une boutique en ligne permettant de vendre des produits sportifs, une page de contact, et enfin un en-tête/pied de page avec Bootstrap5.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://m.training.free.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">m.training.fr</a>
+                <a href="http://m.training.free.fr/" aria-label="Lien internet vers M Training" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">m.training.fr</a>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
                 </li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://jsevestre02.free.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">jsevestre.fr</a>
+                <a href="http://jsevestre02.free.fr/" aria-label="Lien internet actuel" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">jsevestre.fr</a>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
                 <li>• Développement d'une application Android pour les personnes atteintes de la maladie d'Alzheimer comprenant une montre connectée et une application aidant. L'objectif de ce projet est que la personne âgée puisse se repérer et être guidée dans l'espace public. De plus un outil de reconnaissance faciale a été mis en place pour qu'elle puisse reconnaître ses proches.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" @click="Rapport_Final_DontForget">Télécharger le rapport</a>
+                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" aria-label="Télécharger le rapport du projet" @click="Rapport_Final_DontForget">Télécharger le rapport</a>
             </div>
         </div>
 
@@ -88,7 +88,8 @@
                 <li>• Création d'un globe terrestre à persistance rétinienne à LED.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" @click="Projet_Tutoré_GlobeLED_SEVESTRE">Télécharger le rapport</a>
+                <a class="btn btn-primary fw-bold col-8 col-sm-6 col-md-4" role="button"
+                aria-label="Télécharger le rapport du projet tutoré" @click="Projet_Tutoré_GlobeLED_SEVESTRE">Télécharger le rapport</a>
             </div>
         </div>
 

@@ -4,39 +4,39 @@
 
 			<div class="navbar">
 				<div class="logo">
-					<router-link to="/">
+					<router-link to="/" role="button" aria-label="Retour à la page d’accueil">
                 		Accueil
             		</router-link>
 				</div>
 				<ul class="links">
 					<li>
-						<router-link to="/pages/Profil">
+						<router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
                         	Profil
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Experiences">
+						<router-link to="/pages/Experiences" role="button" aria-label="Navigation vers les expériences">
                         	Expériences
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Competences">
+						<router-link to="/pages/Competences" role="button" aria-label="Navigation vers les compétences">
                         	Compétences
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Formations">
+						<router-link to="/pages/Formations" role="button" aria-label="Navigation vers les formations">
                         	Formations
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Loisirs">
+						<router-link to="/pages/Loisirs" role="button" aria-label="Navigation vers les loisirs">
                         	Loisirs
                     	</router-link>
 					</li>
 				</ul>
 				<div class="buttons">
-					<router-link to="/pages/Contact" class="action-button">
+					<router-link to="/pages/Contact" class="action-button" role="button" aria-label="Navigation vers contact">
                         Contact
                     </router-link>
 				</div>
@@ -48,33 +48,33 @@
 			<div class="burger-menu" :class="{ open: isMenuOpen }">
 				<ul class="links">
 					<li>
-						<router-link to="/pages/Profil">
+						<router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
                         	Profil
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Experiences">
+						<router-link to="/pages/Experiences" role="button" aria-label="Navigation vers les expériences">
                         	Expériences
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Competences">
+						<router-link to="/pages/Competences" role="button" aria-label="Navigation vers les compétences">
                         	Compétences
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Formations">
+						<router-link to="/pages/Formations" role="button" aria-label="Navigation vers les formations">
                         	Formations
                     	</router-link>
 					</li>
 					<li>
-						<router-link to="/pages/Loisirs">
+						<router-link to="/pages/Loisirs" role="button" aria-label="Navigation vers les loisirs">
                         	Loisirs
                     	</router-link>
 					</li>
 					<div class="divider"></div>
 					<div class="buttons-burger-menu">
-						<router-link to="/pages/Contact" class="action-button">
+						<router-link to="/pages/Contact" class="action-button" role="button" aria-label="Navigation vers contact">
                         	Contact
                     	</router-link>
 					</div>

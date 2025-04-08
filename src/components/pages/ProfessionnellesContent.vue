@@ -15,7 +15,7 @@
                 <li>•	<b>Former</b> deux collègues me rejoignant sur le projet.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="https://mairie-urba.fr/landing" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">mairie-urba.fr</a>
+                <a href="https://mairie-urba.fr/landing" aria-label="Lien internet vers Mairie-Urba" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">mairie-urba.fr</a>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                 <li>•	Projets utilisant APACHE2, <b>MariaDB</b> et <b>JavaScript</b> (AJAX). Migrer vers un nouveau serveur en <b>PHP 7.4</b> avec l’aide d’un info. réseau et admin système. Changer l’<b>encodage</b> des applications en ISO vers l’<b>UTF8</b>.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="https://www.cea.fr/" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="blanck">cea.fr</a>
+                <a href="https://www.cea.fr/" aria-label="Lien internet vers le CEA" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">cea.fr</a>
             </div>
         </div>
 

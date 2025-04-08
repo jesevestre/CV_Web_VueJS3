@@ -9,7 +9,7 @@
                     <tbody>
                         <tr>
                             <td colspan="2">
-                                <router-link to="/" class="btn btn-success pt-3 pb-3 text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/" class="btn btn-success pt-3 pb-3 text-light fw-bold text-decoration-none col-12" role="button" aria-label="Retour à la page d’accueil">
                                     Accueil
                                 </router-link>
                             </td>
@@ -24,12 +24,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Profil" class="btn btn-primary text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Profil" class="btn btn-primary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers profil">
                                     Profil
                                 </router-link>
                             </td>
                             <td>
-                                <router-link to="/pages/Contact" class="btn contact text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Contact" class="btn contact text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers contact">
                                     Contact
                                 </router-link>
                             </td>
@@ -43,19 +43,19 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Experiences" class="btn btn-success text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Experiences" class="btn btn-success text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers expériences">
                                     Expériences
                                 </router-link>
                             </td>
                             <td>
-                                <router-link to="/pages/Experiences" class="btn hidden col-12">
+                                <router-link to="/pages/Experiences" class="btn hidden col-12" role="button" aria-label="Navigation vers expériences">
                                     Expériences
                                 </router-link>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Competences" class="btn btn-info text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Competences" class="btn btn-info text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers compétences">
                                     Compétences
                                 </router-link>
                             </td>
@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Formations" class="btn btn-primary text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Formations" class="btn btn-primary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers formations">
                                     Formations
                                 </router-link>
                             </td>
@@ -80,7 +80,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Loisirs" class="btn btn-secondary text-light fw-bold text-decoration-none col-12">
+                                <router-link to="/pages/Loisirs" class="btn btn-secondary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers loisirs">
                                     Loisirs
                                 </router-link>
                             </td>
