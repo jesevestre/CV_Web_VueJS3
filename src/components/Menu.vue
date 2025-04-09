@@ -41,7 +41,7 @@
                     </router-link>
 				</div>
 				<div class="burger-menu-button" @click="toggleMenu">
-					<font-awesome-icon :icon="isMenuOpen ? ['fas', 'xmark'] : ['fas', 'bars']" />
+					<font-awesome-icon :icon="isMenuOpen ? ['fas', 'xmark'] : ['fas', 'bars']" class="icon-white" />
 				</div>
 			</div>
 
@@ -149,10 +149,11 @@ header {
 }
 .navbar .burger-menu-button {
 	display: none;
-	color: #FFF;
 	font-size: 1.5rem;
 	cursor: pointer;
-
+}
+.icon-white {
+	color: #FFF;
 }
 .buttons {
 	display: flex;

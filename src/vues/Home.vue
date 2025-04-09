@@ -127,7 +127,7 @@ onMounted(() => {
         const TL = gsap.timeline({ paused: true });
 
 		TL
-            .from(titreSpans, { stagger: 0.7, duration: 1.5, top: -30, opacity: 0, ease: "power2.out" })
+            .from(titreSpans, { stagger: 0.5, duration: 1.3, top: -30, opacity: 0, ease: "power2.out" })
             .from(l1, { duration: 1.5, width: 0, ease: "power2.out" }, '-=3')
             .from(l2, { duration: 1.5, width: 0, ease: "power2.out" }, '-=3')
             .from(drapeau, { duration: 0.5, transform: "scale(0)", ease: "power2.out" }, '-=1')
