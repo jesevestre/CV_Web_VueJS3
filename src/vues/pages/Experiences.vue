@@ -46,7 +46,7 @@ import '@/assets/css/PagesStyle.css';
 
 import ProfessionnellesContent from '@/components/pages/ProfessionnellesContent.vue';
 import StagesContent from '@/components/pages/StagesContent.vue';
-import ProjetsPerso from '@/components/pages/ProjetsPersoContent.vue';
+import ProjetsPerso from '@/components/pages/MesProjetsContent.vue';
 
 export default {
     name: 'Experiences',
@@ -56,7 +56,7 @@ export default {
             tabs: [
                 { id: 'professionnelles', label: 'Professionnelles', component: markRaw(ProfessionnellesContent) },
                 { id: 'stages', label: 'Stages', component: markRaw(StagesContent) },
-                { id: 'projetsPerso', label: 'Projets perso', component: markRaw(ProjetsPerso) }
+                { id: 'mesProjets', label: 'Mes projets', component: markRaw(ProjetsPerso) }
             ]
         };
     }

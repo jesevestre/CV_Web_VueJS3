@@ -98,7 +98,7 @@
 
 <script>
 export default {
-    name: 'ProjetsPersoContent',
+    name: 'MesProjetsContent',
 
     methods: {
         Rapport_Final_DontForget() {
@@ -111,7 +111,7 @@ export default {
         },
         Projet_Tutoré_GlobeLED_SEVESTRE() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Projet_Tutoré_GlobeLED_SEVESTRE.pdf';
+            lien.href = 'http://jsevestre02.free.fr/fichiers/Projet_Tutore_GlobeLED_SEVESTRE.pdf';
             lien.setAttribute('download', 'Projet_Tutoré_GlobeLED_SEVESTRE.pdf');
             document.body.appendChild(lien);
             lien.click();
