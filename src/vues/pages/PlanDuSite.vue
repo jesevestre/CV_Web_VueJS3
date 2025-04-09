@@ -9,7 +9,7 @@
                     <tbody>
                         <tr>
                             <td colspan="2">
-                                <router-link to="/" class="btn btn-success pt-3 pb-3 text-light fw-bold text-decoration-none col-12" role="button" aria-label="Retour à la page d’accueil">
+                                <router-link to="/" class="btn button-color2 pt-3 pb-3 fw-bold text-decoration-none col-12" role="button" aria-label="Retour à la page d’accueil">
                                     Accueil
                                 </router-link>
                             </td>
@@ -24,12 +24,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Profil" class="btn btn-primary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers profil">
+                                <router-link to="/pages/Profil" class="btn button-color4 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers profil">
                                     Profil
                                 </router-link>
                             </td>
                             <td>
-                                <router-link to="/pages/Contact" class="btn contact text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers contact">
+                                <router-link to="/pages/Contact" class="btn button-color1 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers contact">
                                     Contact
                                 </router-link>
                             </td>
@@ -43,7 +43,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Experiences" class="btn btn-success text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers expériences">
+                                <router-link to="/pages/Experiences" class="btn button-color3 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers expériences">
                                     Expériences
                                 </router-link>
                             </td>
@@ -55,7 +55,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Competences" class="btn btn-info text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers compétences">
+                                <router-link to="/pages/Competences" class="btn button-color4 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers compétences">
                                     Compétences
                                 </router-link>
                             </td>
@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Formations" class="btn btn-primary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers formations">
+                                <router-link to="/pages/Formations" class="btn button-color1 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers formations">
                                     Formations
                                 </router-link>
                             </td>
@@ -80,7 +80,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <router-link to="/pages/Loisirs" class="btn btn-secondary text-light fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers loisirs">
+                                <router-link to="/pages/Loisirs" class="btn button-color2 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers loisirs">
                                     Loisirs
                                 </router-link>
                             </td>
@@ -108,15 +108,6 @@ export default {
 <style scoped>
 .table tr, .table td, .table th {
     border: none;
-}
-.contact {
-    background: #63C7B2;
-    color: white;
-    font-weight: bold;
-}
-.contact:hover {
-    background: #56ab97;
-    color: white;
 }
 .hidden {
     color: #f8f9fa !important;

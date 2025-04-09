@@ -3,7 +3,7 @@
         
         <div class="row col-12 col-md-8 pt-3 pb-3">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn-success fw-bold" aria-hidden="true">Environnement</p>
+                <p class="btn button-color1 fw-bold" aria-hidden="true">Environnement</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -22,7 +22,7 @@
 
         <div class="row col-12 col-md-8 pb-3">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn-primary fw-bold" aria-hidden="true">Outils d'accessibilité</p>
+                <p class="btn button-color2 fw-bold" aria-hidden="true">Outils d'accessibilité</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -47,7 +47,7 @@
 
         <div class="row col-12 col-md-8 pb-3">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn-info text-white fw-bold" aria-hidden="true">Méthodes Agiles</p>
+                <p class="btn button-color3 text-white fw-bold" aria-hidden="true">Méthodes Agiles</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -69,7 +69,7 @@
 
         <div class="row col-12 col-md-8 pb-5">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn-secondary fw-bold" aria-hidden="true">Versionning</p>
+                <p class="btn button-color4 fw-bold" aria-hidden="true">Versionning</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -88,7 +88,7 @@
 
         <div class="row col-12 col-md-8 pb-5">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn btn-light border-dark fw-bold" aria-hidden="true">Hébergement et services</p>
+                <p class="btn btn button-color1 fw-bold" aria-hidden="true">Hébergement et services</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -107,7 +107,7 @@
 
         <div class="row col-12 col-md-8 pb-5">
             <div class="col-5 d-flex align-items-center justify-content-center">
-                <p class="btn btn-dark fw-bold" aria-hidden="true">Visualisation des données</p>
+                <p class="btn button-color2 fw-bold" aria-hidden="true">Visualisation des données</p>
             </div>
             <div class="col-2 d-flex align-items-center justify-content-left">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />

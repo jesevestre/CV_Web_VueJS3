@@ -36,7 +36,7 @@
 					</li>
 				</ul>
 				<div class="buttons">
-					<router-link to="/pages/Contact" class="action-button" role="button" aria-label="Navigation vers contact">
+					<router-link to="/pages/Contact" class="action-button button-color1" role="button" aria-label="Navigation vers contact">
                         Contact
                     </router-link>
 				</div>
@@ -74,7 +74,7 @@
 					</li>
 					<div class="divider"></div>
 					<div class="buttons-burger-menu">
-						<router-link to="/pages/Contact" class="action-button" role="button" aria-label="Navigation vers contact">
+						<router-link to="/pages/Contact" class="action-button button-color1" role="button" aria-label="Navigation vers contact">
                         	Contact
                     	</router-link>
 					</div>
@@ -86,6 +86,8 @@
 </template>
 
 <script>
+import '@/assets/css/PagesStyle.css';
+
 export default {
     name: 'Menu',
 
@@ -158,8 +160,6 @@ header {
 }
 .action-button {
 	outline: none;
-	color: white;
-	background-color: #63C7B2;
 	border: 1px solid #444;
 	padding: 0.5rem 1.2rem;
 	border-radius: 5px;
@@ -167,10 +167,7 @@ header {
 	font-weight: bold;
 	cursor: pointer;
 }
-.action-button:hover {
-	color: #FFF;
-	background-color: #56ab97;
-}
+
 /* Burger menu */
 .burger-menu {
 	display: none;

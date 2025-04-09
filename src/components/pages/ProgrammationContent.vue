@@ -3,7 +3,7 @@
         <div class="row mt-3">
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn btn-success fw-bold" aria-hidden="true">PHP</p>
+                <p class="btn button-color1 fw-bold" aria-hidden="true">PHP</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn btn-primary fw-bold" aria-hidden="true">SQL</p>
+                <p class="btn button-color2 fw-bold" aria-hidden="true">SQL</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -53,7 +53,7 @@
         <div class="row mt-3">
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn btn-info text-white fw-bold" aria-hidden="true">JavaScript</p>
+                <p class="btn button-color4 text-white fw-bold" aria-hidden="true">JavaScript</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -73,7 +73,7 @@
             </div>
 
             <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn btn-secondary fw-bold" aria-hidden="true">Framework</p>
+                <p class="btn button-color3 fw-bold" aria-hidden="true">Framework</p>
             </div>
             <div class="col-1 d-flex align-items-center justify-content-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
@@ -156,4 +156,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

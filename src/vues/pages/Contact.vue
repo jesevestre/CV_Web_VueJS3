@@ -16,8 +16,8 @@
             <label for="message">Message :</label>
             <textarea v-model="form.message" class="form-control mb-5" rows="5" id="message" placeholder="Votre message" required></textarea>
             
-            <div class="d-grid gap-2 col-4 col-sm-3 col-md-2 mx-auto boutonContact">
-                <button type="submit" class="btn contact" :disabled="loading" aria-label="Envoyer le message">
+            <div class="d-grid gap-2 col-4 col-sm-3 col-md-2 mx-auto">
+                <button type="submit" class="btn button-color1 fw-bold" :disabled="loading" aria-label="Envoyer le message">
                     {{ loading ? "Envoi..." : "Envoyer" }}
                 </button>
             </div>
@@ -86,13 +86,5 @@ export default {
 
 
 <style scoped>
-.contact {
-    background: #63C7B2;
-    color: white;
-    font-weight: bold;
-}
-.contact:hover {
-    background: #56ab97;
-    color: white;
-}
+
 </style>

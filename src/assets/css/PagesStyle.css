@@ -21,7 +21,7 @@ h1 {
     font-weight: 600;
     color: #333;
 }
-.svg-inline--fa{
+.svg-inline--fa {
     color: #333;
 }
 h4 {
@@ -29,6 +29,38 @@ h4 {
 }
 ul {
     list-style-type: none;
+}
+.button-color1 {
+    background-color: #63C7B2;
+    color: #FFF;
+}
+.button-color2 {
+    background-color: #0C5C4A;
+    color: #FFF;
+}
+.button-color3 {
+    background-color: #17AD8D;
+    color: #FFF;
+}
+.button-color4 {
+    background-color: #11856C;
+    color: #FFF;
+}
+.button-color1:hover {
+    background-color: #56ab97;
+    color: #FFF !important;
+}
+.button-color2:hover {
+    background-color: #11755f;
+    color: #FFF;
+}
+.button-color3:hover {
+    background-color: #15997c;
+    color: #FFF;
+}
+.button-color4:hover {
+    background-color: #17a183;
+    color: #FFF;
 }
 
 /* Onglets de navigation */

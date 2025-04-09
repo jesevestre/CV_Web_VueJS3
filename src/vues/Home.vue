@@ -61,7 +61,9 @@
 		</ul>
 
         <div class="divMaPhoto">
-            <img src="@/assets/images/PhotoCV.jpg" class="maPhoto" alt="Ma photo de profil" />
+            <router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
+                <img src="@/assets/images/PhotoCV.jpg" class="maPhoto" alt="Ma photo de profil" />
+            </router-link>
         </div>
 
         <Footer />
