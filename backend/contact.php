@@ -1,31 +1,38 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
-header("Content-Type: application/json");
+header("Content-Type: text/plain; charset=utf-8");
 
-$data = json_decode(file_get_contents("php://input"), true);
+// Vérifie que toutes les données sont là
+if (!isset($_POST["name"], $_POST["email"], $_POST["subject"], $_POST["message"])) {
+    echo "Erreur : données manquantes";
+    exit;
+}
 
-if (isset($data["name"], $data["email"], $data["subject"], $data["message"])) {
-    $name = htmlspecialchars($data["name"]);
-    $email = filter_var($data["email"], FILTER_SANITIZE_EMAIL);
-    $subject = htmlspecialchars($data["subject"]);
-    $message = htmlspecialchars($data["message"]);
+// Nettoyage et sécurisation
+$name = htmlspecialchars($_POST["name"]);
+$subject = htmlspecialchars($_POST["subject"]);
+$message = htmlspecialchars($_POST["message"]);
+$email = trim($_POST["email"]);
+$email = strip_tags($email);
+$email = htmlspecialchars($email); 
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(["success" => false, "message" => "Email invalide"]);
-        exit;
-    }
+// Validation simple de l'email
+if (!preg_match("/^[^@\s]+@[^@\s]+\.[^@\s]+$/", $email)) {
+    echo "Erreur : email invalide";
+    exit;
+}
 
-    $to = "sevestre.jb@gmail.com"; // Remplace par ton adresse email
-    $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
-    $fullMessage = "Nom: $name\n\nMessage:\n$message";
+// Construction de l'email
+$to = "sevestre.jb@gmail.com";
+$headers = "From: $email\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8";
+$fullMessage = "Nom: $name\n\nMessage:\n$message";
 
-    if (mail($to, "Message du site: $subject", $fullMessage, $headers)) {
-        echo json_encode(["success" => true, "message" => "Email envoyé avec succès"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Erreur lors de l'envoi du mail"]);
-    }
+if (mail($to, "Message du site: $subject", $fullMessage, $headers)) {
+    echo "Email envoyé avec succès";
 } else {
-    echo json_encode(["success" => false, "message" => "Données manquantes"]);
+    echo "Erreur lors de l'envoi du mail";
 }
 ?>

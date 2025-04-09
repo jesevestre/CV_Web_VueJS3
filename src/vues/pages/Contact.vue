@@ -22,11 +22,11 @@
                 </button>
             </div>
 
-            <div v-if="successMessage" class="alert alert-success mt-3" role="status" aria-live="polite">
-                {{ successMessage }}
+            <div v-if="successMessage" class="alert alert-success mt-3 d-flex justify-content-center align-items-center" role="status" aria-live="polite">
+                {{ successMessage }}&nbsp;<font-awesome-icon :icon="['fas', 'check']" />
             </div>
-            <div v-if="errorMessage" class="alert alert-warning mt-3" role="alert" aria-live="assertive">
-                {{ errorMessage }}
+            <div v-if="errorMessage" class="alert alert-warning mt-3 d-flex justify-content-center align-items-center" role="alert" aria-live="assertive">
+                {{ errorMessage }}&nbsp;<font-awesome-icon :icon="['fas', 'xmark']" />
             </div>
         </form>
 
@@ -58,21 +58,25 @@ export default {
             this.errorMessage = "";
 
             try {
+                const formData = new FormData();
+                formData.append("name", this.form.name);
+                formData.append("email", this.form.email);
+                formData.append("subject", this.form.subject);
+                formData.append("message", this.form.message);
+
                 const response = await fetch("http://jsevestre02.free.fr/backend/contact.php", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(this.form),
+                    body: formData,
                 });
 
-                const data = await response.json();
+                const text = await response.text();
+                console.log("Réponse du serveur : ", text);
 
-                if (data.success) {
-                    this.successMessage = "Votre message a bien été envoyé.";
+                if (text.includes("succès") || text.includes("envoyé")) {
+                    this.successMessage = "Votre message a été envoyé avec succès ";
                     this.form = { name: "", email: "", subject: "", message: "" };
                 } else {
-                    this.errorMessage = "Une erreur est survenue. Veuillez rééssayer.";
+                    this.errorMessage = text || "Une erreur est survenue, veuillez rééssayer";
                 }
             } catch (error) {
                 this.errorMessage = "Impossible d'envoyer le message.";
