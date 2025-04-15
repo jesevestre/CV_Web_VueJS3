@@ -5,39 +5,39 @@
 			<div class="navbar">
 				<div class="logo">
 					<router-link to="/" role="button" aria-label="Retour à la page d’accueil">
-                		Accueil
+                		{{ localLabelsMenu.accueil }}
             		</router-link>
 				</div>
 				<ul class="links">
 					<li>
 						<router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
-                        	Profil
+                        	{{ localLabelsMenu.profil }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Experiences" role="button" aria-label="Navigation vers les expériences">
-                        	Expériences
+                        	{{ localLabelsMenu.experiences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Competences" role="button" aria-label="Navigation vers les compétences">
-                        	Compétences
+                        	{{ localLabelsMenu.competences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Formations" role="button" aria-label="Navigation vers les formations">
-                        	Formations
+                        	{{ localLabelsMenu.formations }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Loisirs" role="button" aria-label="Navigation vers les loisirs">
-                        	Loisirs
+                        	{{ localLabelsMenu.loisirs }}
                     	</router-link>
 					</li>
 				</ul>
 				<div class="buttons">
 					<router-link to="/pages/Contact" class="action-button button-color1" role="button" aria-label="Navigation vers contact">
-                        Contact
+                        {{ localLabelsMenu.contact }}
                     </router-link>
 				</div>
 				<div class="burger-menu-button" @click="toggleMenu">
@@ -91,10 +91,61 @@ import '@/assets/css/PagesStyle.css';
 export default {
     name: 'Menu',
 
+	props: {
+        labels: {
+            type: Object,
+            default: () => ({
+				accueil: "Accueil",
+				profil: "Profil",
+				experiences: "Expériences",
+				competences: "Compétences",
+				formations: "Formations",
+				loisirs: "Loisirs",
+				contact: "Contact",
+            })
+        }
+    },
+
 	data() {
         return {
             isMenuOpen: false,
+			localLabelsMenu: { ...this.labels }
         };
+    },
+
+	mounted() {
+        const lang = document.documentElement.lang || 'fr'; 
+
+        if (lang === 'fr') {
+            this.localLabelsMenu = {
+				accueil: 'Accueil',
+                profil: 'Profil',
+				experiences: 'Expériences',
+				competences: 'Compétences',
+				formations: 'Formations',
+				loisirs: 'Loisirs',
+				contact: 'Contact',
+            };
+        } else {
+            this.localLabelsMenu = {
+				accueil: 'Home',
+                profil: 'Profile',
+				experiences: 'Experiences',
+				competences: 'Skills',
+				formations: 'Education',
+				loisirs: 'Hobbies',
+				contact: 'Contact',
+            };
+        }
+    },
+
+    watch: {
+        labels: {
+            handler(newLabels) {
+                this.localLabelsMenu = { ...newLabels };
+            },
+            deep: true
+        }
     },
 
 	methods: {

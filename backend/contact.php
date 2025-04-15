@@ -1,36 +1,39 @@
 <?php
+declare(strict_types=1);
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Content-Type: text/plain; charset=utf-8");
 
-// Vérifie que toutes les données sont là
-if (!isset($_POST["name"], $_POST["email"], $_POST["subject"], $_POST["message"])) {
+// Vérification des données POST
+if (empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["subject"]) || empty($_POST["message"])) {
     echo "Erreur : données manquantes";
     exit;
 }
 
-// Nettoyage et sécurisation
-$name = htmlspecialchars($_POST["name"]);
-$subject = htmlspecialchars($_POST["subject"]);
-$message = htmlspecialchars($_POST["message"]);
-$email = trim($_POST["email"]);
-$email = strip_tags($email);
-$email = htmlspecialchars($email); 
+// Sécurisation des entrées
+$name = htmlspecialchars(trim($_POST["name"]), ENT_QUOTES, 'UTF-8');
+$subject = htmlspecialchars(trim($_POST["subject"]), ENT_QUOTES, 'UTF-8');
+$message = htmlspecialchars(trim($_POST["message"]), ENT_QUOTES, 'UTF-8');
+$email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
 
-// Validation simple de l'email
-if (!preg_match("/^[^@\s]+@[^@\s]+\.[^@\s]+$/", $email)) {
+// Validation email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Erreur : email invalide";
     exit;
 }
 
-// Construction de l'email
+// Préparation de l'e-mail
 $to = "sevestre.jb@gmail.com";
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8";
+$headers = [
+    "From: $email",
+    "Reply-To: $email",
+    "Content-Type: text/plain; charset=UTF-8"
+];
 $fullMessage = "Nom: $name\n\nMessage:\n$message";
 
-if (mail($to, "Message du site: $subject", $fullMessage, $headers)) {
+// Envoi de l'e-mail
+if (mail($to, "Message du site: $subject", $fullMessage, implode("\r\n", $headers))) {
     echo "Email envoyé avec succès";
 } else {
     echo "Erreur lors de l'envoi du mail";

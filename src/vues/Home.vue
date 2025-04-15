@@ -66,16 +66,51 @@
             </router-link>
         </div>
 
-        <Footer />
+        <Footer :labels="labels" />
 
 	</div>
 </template>
 
 
 <script setup>
-import Footer from '@/components/Footer.vue';
 import { gsap } from "gsap";
 import { ref, watchEffect, onMounted, nextTick } from 'vue';
+import Footer from '@/components/Footer.vue';
+
+// Gestion de la langue
+const languages = ['fr', 'en'];
+const translations = {
+	fr: {
+		profil: 'Profil',
+		experiences: 'Expériences',
+		competences: 'Compétences',
+		formations: 'Formations',
+		loisirs: 'Loisirs',
+		planDuSite: 'Plan du site',
+		contact: 'Contact',
+		mentionsLegales: 'Mentions légales',
+	},
+	en: {
+		profil: 'Profile',
+		experiences: 'Experiences',
+		competences: 'Skills',
+		formations: 'Education',
+		loisirs: 'Hobbies',
+		planDuSite: 'Site map',
+		contact: 'Contact',
+		mentionsLegales: 'Legal notices',
+	},
+};
+
+const currentLang = ref(localStorage.getItem('lang') || 'fr');
+const labels = ref(translations[currentLang.value]);
+
+const changeLangage = () => {
+	currentLang.value = currentLang.value === 'fr' ? 'en' : 'fr';
+	labels.value = translations[currentLang.value];
+	localStorage.setItem('lang', currentLang.value);
+    document.documentElement.setAttribute('lang', currentLang.value);
+};
 
 // Mode sombre
 const isDarkMode = ref(false);
@@ -83,36 +118,10 @@ const toggleDarkMode = () => {
 	isDarkMode.value = !isDarkMode.value;
 };
 const applyDarkMode = () => {
-	document.documentElement.style.setProperty("--background", isDarkMode.value ? "rgba(60, 60, 60, 0.6)" : "rgba(60, 60, 60, 0.3)");
-	document.documentElement.style.setProperty("--background-btn", isDarkMode.value ? "rgba(60, 60, 60, 0.9)" : "rgba(60, 60, 60, 0.45)");
+	document.documentElement.style.setProperty('--background', isDarkMode.value ? 'rgba(60, 60, 60, 0.6)' : 'rgba(60, 60, 60, 0.3)');
+	document.documentElement.style.setProperty('--background-btn', isDarkMode.value ? 'rgba(60, 60, 60, 0.9)' : 'rgba(60, 60, 60, 0.45)');
 };
 watchEffect(applyDarkMode);
-
-// Gestion de la langue
-const languages = ["fr", "en"];
-const currentLangIndex = ref(0); // 0 = français, 1 = anglais
-const translations = {
-	fr: {
-		profil: "Profil",
-		experiences: "Expériences",
-		competences: "Compétences",
-		formations: "Formations",
-		loisirs: "Loisirs",
-	},
-	en: {
-		profil: "Profile",
-		experiences: "Experiences",
-		competences: "Skills",
-		formations: "Education",
-		loisirs: "Hobbies",
-	},
-};
-const labels = ref(translations[languages[currentLangIndex.value]]);
-const changeLangage = () => {
-	currentLangIndex.value = (currentLangIndex.value + 1) % languages.length;
-	labels.value = translations[languages[currentLangIndex.value]];
-	localStorage.setItem('lang', languages[currentLangIndex.value]);
-};
 
 onMounted(() => {
     // Effet lors de la venue sur la page
@@ -127,24 +136,17 @@ onMounted(() => {
         const TL = gsap.timeline({ paused: true });
 
 		TL
-            .from(titreSpans, { stagger: 0.5, duration: 1.3, top: -30, opacity: 0, ease: "power2.out" })
-            .from(l1, { duration: 1.5, width: 0, ease: "power2.out" }, '-=3')
-            .from(l2, { duration: 1.5, width: 0, ease: "power2.out" }, '-=3')
-            .from(drapeau, { duration: 0.5, transform: "scale(0)", ease: "power2.out" }, '-=1')
-            .from(switch1, { duration: 0.5, transform: "scale(0)", ease: "power2.out" }, '-=1')
-            .from(btns, { stagger: 0.35, duration: 1, opacity: 0, ease: "power2.out" }, '-=1')
-            .from(medias, { stagger: 0.3, duration: 1.5, opacity: 0, filter: "blur(5px)", ease: "power2.out" }, '-=1')
-            .to(medias, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" });
+            .from(titreSpans, { stagger: 0.5, duration: 1.3, top: -30, opacity: 0, ease: 'power2.out' })
+            .from(l1, { duration: 1.5, width: 0, ease: 'power2.out' }, '-=3')
+            .from(l2, { duration: 1.5, width: 0, ease: 'power2.out' }, '-=3')
+            .from(drapeau, { duration: 0.5, transform: 'scale(0)', ease: 'power2.out' }, '-=1')
+            .from(switch1, { duration: 0.5, transform: 'scale(0)', ease: 'power2.out' }, '-=1')
+            .from(btns, { stagger: 0.35, duration: 1, opacity: 0, ease: 'power2.out' }, '-=1')
+            .from(medias, { stagger: 0.3, duration: 1.5, opacity: 0, filter: 'blur(5px)', ease: 'power2.out' }, '-=1')
+            .to(medias, { opacity: 1, filter: 'blur(0px)', duration: 2, ease: 'power2.out' });
         
         TL.play();
 	});
-
-    // Gestion de la langue
-    const savedLang = localStorage.getItem('lang');
-	if (savedLang && languages.includes(savedLang)) {
-		currentLangIndex.value = languages.indexOf(savedLang);
-		labels.value = translations[savedLang];
-	}
 });
 </script>
 
