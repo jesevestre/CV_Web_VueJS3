@@ -43,7 +43,7 @@ $headers = [
 $fullMessage = "Sujet: $subject\n\n\nMessage:\n$message\n\n\nNom de l'expéditeur: $name";
 
 // Envoi de l'e-mail
-if (mail($to, "Message depuis jbsevestre.fr", $fullMessage, implode("\r\n", $headers))) {
+if (mail($to, "Message depuis le formulaire jbsevestre.fr", $fullMessage, implode("\r\n", $headers))) {
     echo "successMessage";
 } else {
     echo "errorMessage4";

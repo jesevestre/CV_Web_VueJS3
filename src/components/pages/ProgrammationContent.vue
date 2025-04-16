@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div class="row mt-3">
 
-            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn button-color1 fw-bold" aria-hidden="true">PHP</p>
+        <div class="row d-flex align-items-center col-12 col-md-8 pb-4">
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <p class="btn button-color1 fw-bold mb-0" aria-hidden="true">PHP</p>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center">
+            <div class="col-2 d-flex justify-content-center align-items-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-6 col-lg-2 d-flex align-items-center">
-                <ul>
+            <div class="col-5 d-flex align-items-center">
+                <ul class="mb-0">
                     <li>
                         5.0
                     </li>
@@ -24,15 +24,17 @@
                     </li>
                 </ul>
             </div>
+        </div>
 
-            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn button-color2 fw-bold" aria-hidden="true">SQL</p>
+        <div class="row d-flex align-items-center col-12 col-md-8 pb-4">
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <p class="btn button-color2 fw-bold mb-0" aria-hidden="true">SQL</p>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center">
+            <div class="col-2 d-flex justify-content-center align-items-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-6 col-lg-2 d-flex align-items-center">
-                <ul>
+            <div class="col-5 d-flex align-items-center">
+                <ul class="mb-0">
                     <li>
                         MySQL
                     </li>
@@ -47,19 +49,17 @@
                     </li>
                 </ul>
             </div>
-
         </div>
 
-        <div class="row mt-3">
-
-            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn button-color4 text-white fw-bold" aria-hidden="true">JavaScript</p>
+        <div class="row d-flex align-items-center col-12 col-md-8 pb-4">
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <p class="btn button-color4 text-white fw-bold mb-0" aria-hidden="true">JavaScript</p>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center">
+            <div class="col-2 d-flex justify-content-center align-items-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-6 col-lg-2 d-flex align-items-center">
-                <ul>
+            <div class="col-5 d-flex align-items-center">
+                <ul class="mb-0">
                     <li>
                         Vanilla
                     </li>
@@ -71,15 +71,17 @@
                     </li>
                 </ul>
             </div>
+        </div>
 
-            <div class="col-4 col-lg-2 d-flex align-items-center justify-content-end">
-                <p class="btn button-color3 fw-bold" aria-hidden="true">Framework</p>
+        <div class="row d-flex align-items-center col-12 col-md-8 pb-4">
+            <div class="col-5 d-flex justify-content-center align-items-center">
+                <p class="btn button-color3 fw-bold mb-0" aria-hidden="true">Framework</p>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center">
+            <div class="col-2 d-flex justify-content-center align-items-center">
                 <font-awesome-icon :icon="['fas', 'arrow-right']" />
             </div>
-            <div class="col-6 col-lg-2 d-flex align-items-center">
-                <ul>
+            <div class="col-5 d-flex align-items-center">
+                <ul class="mb-0">
                     <li>
                         VueJS3
                     </li>

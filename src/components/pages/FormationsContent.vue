@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="row pb-5">
+        <div class="row pb-4">
             <div class="col-4 d-flex align-items-center justify-content-center">
                 <p class="btn button-color1 fw-bold" aria-hidden="true">2025</p>
             </div>
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="row pb-5">
+        <div class="row pb-4">
             <div class="col-4 d-flex align-items-center justify-content-center">
                 <p class="btn button-color2 fw-bold" aria-hidden="true">2022</p>
             </div>

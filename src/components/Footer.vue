@@ -18,48 +18,39 @@
 export default {
     name: 'Footer',
 
-	props: {
-        labels: {
-            type: Object,
-            default: () => ({
-                planDuSite: 'Plan du site',
-                contact: 'Contact',
-                mentionsLegales: 'Mentions légales'
-            })
-        }
-    },
-
     data() {
         return {
-            localLabels: { ...this.labels }
+            localLabels: {}
         };
     },
 
-    mounted() {
-        const lang = document.documentElement.lang || 'fr'; 
-
-        if (lang === 'fr') {
-            this.localLabels = {
-                planDuSite: 'Plan du site',
-                contact: 'Contact',
-                mentionsLegales: 'Mentions légales',
-            };
-        } else {
-            this.localLabels = {
-                planDuSite: 'Site map',
-                contact: 'Contact',
-                mentionsLegales: 'Legal notices',
-            };
-        }
+    created() {
+        this.setLanguageAndLabels();
     },
 
-    watch: {
-        labels: {
-            handler(newLabels) {
-                this.localLabels = { ...newLabels };
-            },
-            deep: true
-        }
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (lang === 'fr') {
+                this.localLabels = {
+                    planDuSite: 'Plan du site',
+                    contact: 'Contact',
+                    mentionsLegales: 'Mentions légales',
+                };
+            } else {
+                this.localLabels = {
+                    planDuSite: 'Site map',
+                    contact: 'Contact',
+                    mentionsLegales: 'Legal notices',
+                };
+            }
+        },
     },
 }
 </script>

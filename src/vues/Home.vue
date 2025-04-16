@@ -79,6 +79,10 @@ import Footer from '@/components/Footer.vue';
 
 // Gestion de la langue
 const languages = ['fr', 'en'];
+const browserLang = navigator.language.slice(0, 2);
+const defaultLang = languages.includes(browserLang) ? browserLang : 'fr';
+const currentLang = ref(localStorage.getItem('lang') || defaultLang);
+document.documentElement.setAttribute('lang', currentLang.value);
 const translations = {
 	fr: {
 		profil: 'Profil',
@@ -102,7 +106,6 @@ const translations = {
 	},
 };
 
-const currentLang = ref(localStorage.getItem('lang') || 'fr');
 const labels = ref(translations[currentLang.value]);
 
 const changeLangage = () => {
@@ -475,6 +478,9 @@ footer {
     }
     .l2 {
         width: 90px;
+    }
+    .container-btns {
+        top: 150px;
     }
 }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="MentionLegales container" role="principal">
 
-        <h1 class="mt-5 mb-5">Mentions légales <font-awesome-icon :icon="['fas', 'file-contract']" /></h1>
+        <h1 class="mt-5 mb-5">{{ mentionslegalesLabels.mentionslegales }} <font-awesome-icon :icon="['fas', 'file-contract']" /></h1>
 
         <p>Le présent site est la propriété de <b>Jean-Baptiste SEVESTRE</b>, particulier ayant comme objectif une meilleure visibilité de ses compétences, expériences et diplômes obtenus. </p>
 
@@ -123,6 +123,37 @@ import '@/assets/css/PagesStyle.css';
 
 export default {
     name: 'MentionLegales',
+
+    data() {
+        return {
+            mentionslegalesLabels: {},
+        };
+    },
+
+    created() {
+        this.setLanguageAndLabels();
+    },
+
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+            
+            if (lang === 'fr') {
+                this.mentionslegalesLabels  = {
+                    mentionslegales: "Mentions légales",
+                };
+            } else {
+                this.mentionslegalesLabels  = {
+                    mentionslegales: 'Legal notices',
+                };
+            }
+        },
+    },
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="Competences container mb-5">
 
-        <h1 class="mt-5 mb-5">Compétences
+        <h1 class="mt-5 mb-5">{{ programmationLabels.competences }}
             <font-awesome-icon :icon="['fas', 'computer']" />
         </h1>
 
@@ -49,15 +49,52 @@ import EnvironnementsContent from '@/components/pages/EnvironnementsContent.vue'
 
 export default {
     name: 'Competences',
+
     data() {
         return {
-            activeTab: 'Programmation',
-            tabs: [
-                { id: 'Programmation', label: 'Programmation', component: markRaw(ProgrammationContent) },
-                { id: 'Environnements', label: 'Environnements', component: markRaw(EnvironnementsContent) },
-            ]
+            programmationLabels: {},
+            activeTab: 'programmation',
+            tabs: [],
         };
-    }
+    },
+
+    created() {
+        this.setLanguageAndLabels();
+    },
+
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (lang === 'fr') {
+                this.programmationLabels  = {
+                    competences: "Compétences",
+                    programmation: "Programmation",
+                    environnements: "Environnements",
+                };
+            } else {
+                this.programmationLabels  = {
+                    competences: "Skills",
+                    programmation: "Programming",
+                    environnements: "Environments",
+                };
+            }
+
+            this.setTabs();
+        },
+
+        setTabs() {
+            this.tabs = [
+                { id: 'programmation', label: this.programmationLabels.programmation, component: markRaw(ProgrammationContent) },
+                { id: 'environnements', label: this.programmationLabels.environnements, component: markRaw(EnvironnementsContent) },
+            ];
+        },
+    },
 };
 </script>
 

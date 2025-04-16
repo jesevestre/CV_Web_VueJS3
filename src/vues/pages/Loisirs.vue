@@ -1,7 +1,7 @@
 <template>
     <div class="Loisirs container mb-5">
 
-        <h1 class="mt-5 mb-5">Loisirs
+        <h1 class="mt-5 mb-5">{{ loisirsLabels.loisirs }}
             <font-awesome-icon :icon="['fas', 'sun']" />
         </h1>
 
@@ -50,16 +50,55 @@ import AutreContent from '@/components/pages/AutresContent.vue';
 
 export default {
     name: 'Loisirs',
+
     data() {
         return {
+            loisirsLabels: {},
             activeTab: 'benevolat',
-            tabs: [
-                { id: 'benevolat', label: 'Bénévolats', component: markRaw(BenevolatContent) },
-                { id: 'sport', label: 'Sports', component: markRaw(SportContent) },
-                { id: 'autre', label: 'Autres loisirs', component: markRaw(AutreContent) }
-            ]
+            tabs: [],
         };
-    }
+    },
+
+    created() {
+        this.setLanguageAndLabels();
+    },
+
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+            
+            if (lang === 'fr') {
+                this.loisirsLabels  = {
+                    loisirs: "Loisirs",
+                    benevolats: "Bénévolats",
+                    sports: "Sports",
+                    autres: "Autres loisirs",
+                };
+            } else {
+                this.loisirsLabels  = {
+                    loisirs: 'Hobbies',
+                    benevolats: "Volunteering",
+                    sports: "Sports",
+                    autres: "Other hobbies",
+                };
+            }
+
+            this.setTabs();
+        },
+
+        setTabs() {
+            this.tabs = [
+                { id: 'benevolat', label: this.loisirsLabels.benevolats, component: markRaw(BenevolatContent) },
+                { id: 'sport', label: this.loisirsLabels.sports, component: markRaw(SportContent) },
+                { id: 'autre', label: this.loisirsLabels.autres, component: markRaw(AutreContent) },
+            ];
+        },
+    },
 };
 </script>
 

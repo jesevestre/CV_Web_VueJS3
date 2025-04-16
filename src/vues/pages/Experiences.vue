@@ -1,7 +1,7 @@
 <template>
     <div class="Experiences container mb-5">
 
-        <h1 class="mt-5 mb-5">Expériences
+        <h1 class="mt-5 mb-5">{{ experiencesLabels.experiences }}
             <font-awesome-icon :icon="['fas', 'user-doctor']" />
         </h1>
 
@@ -50,16 +50,54 @@ import ProjetsPerso from '@/components/pages/MesProjetsContent.vue';
 
 export default {
     name: 'Experiences',
+
     data() {
         return {
+            experiencesLabels: {},
             activeTab: 'professionnelles',
-            tabs: [
-                { id: 'professionnelles', label: 'Professionnelles', component: markRaw(ProfessionnellesContent) },
-                { id: 'stages', label: 'Stages', component: markRaw(StagesContent) },
-                { id: 'mesProjets', label: 'Mes projets', component: markRaw(ProjetsPerso) }
-            ]
+            tabs: [],
         };
-    }
+    },
+    
+    created() {
+        this.setLanguageAndLabels();
+    },
+
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (lang === 'fr') {
+                this.experiencesLabels  = {
+                    experiences: "Expériences",
+                    professionnelles: "Professionnelles",
+                    stages: "Stages",
+                    mesProjets: "Mes projets",
+                };
+            } else {
+                this.experiencesLabels  = {
+                    professionnelles: "Professional",
+                    stages: "Internship",
+                    mesProjets: "My projects",
+                };
+            }
+
+            this.setTabs();
+        },
+
+        setTabs() {
+            this.tabs = [
+                { id: 'professionnelles', label: this.experiencesLabels.professionnelles, component: markRaw(ProfessionnellesContent) },
+                { id: 'stages', label: this.experiencesLabels.stages, component: markRaw(StagesContent) },
+                { id: 'mesProjets', label: this.experiencesLabels.mesProjets, component: markRaw(ProjetsPerso) }
+            ];
+        },
+    },
 };
 </script>
 

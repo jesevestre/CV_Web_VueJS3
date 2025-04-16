@@ -1,7 +1,7 @@
 <template>
     <div class="PlanDuSite container mb-5">
 
-        <h1 class="mt-5 mb-5">Plan du site <font-awesome-icon :icon="['fas', 'sitemap']" /></h1>
+        <h1 class="mt-5 mb-5">{{ planDuSiteLabels.planDuSite }} <font-awesome-icon :icon="['fas', 'sitemap']" /></h1>
 
         <div class="text-center">
             <div class="table-responsive">
@@ -101,6 +101,37 @@ import '@/assets/css/PagesStyle.css';
 
 export default {
     name: 'PlanDuSite',
+
+    data() {
+        return {
+            planDuSiteLabels: {},
+        };
+    },
+
+    created() {
+        this.setLanguageAndLabels();
+    },
+
+    methods: {
+        setLanguageAndLabels() {
+            const supportedLangs = ['fr', 'en'];
+            const browserLang = navigator.language.slice(0, 2);
+            const savedLang = localStorage.getItem('lang');
+            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+
+            document.documentElement.setAttribute('lang', lang);
+            
+            if (lang === 'fr') {
+                this.planDuSiteLabels  = {
+                    planDuSite: "Plan du site",
+                };
+            } else {
+                this.planDuSiteLabels  = {
+                    planDuSite: 'Site map',
+                };
+            }
+        },
+    },
 }
 </script>
 
