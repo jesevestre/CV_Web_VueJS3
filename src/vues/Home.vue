@@ -66,7 +66,19 @@
             </router-link>
         </div>
 
-        <Footer :labels="labels" />
+        <footer class="footer text-center">
+            <span>
+                <router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ labels.planDuSite }}</router-link>
+            </span>
+            &nbsp;|&nbsp;
+            <span>
+                <router-link class="footer_span" to="/pages/Contact" role="button" aria-label="Navigation vers contact">{{ labels.contact }}</router-link>
+            </span>
+            &nbsp;|&nbsp;
+            <span>
+                <router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ labels.mentionsLegales }}</router-link>
+            </span>
+        </footer>
 
 	</div>
 </template>
@@ -75,7 +87,6 @@
 <script setup>
 import { gsap } from "gsap";
 import { ref, watchEffect, onMounted, nextTick } from 'vue';
-import Footer from '@/components/Footer.vue';
 
 // Gestion de la langue
 const languages = ['fr', 'en'];
