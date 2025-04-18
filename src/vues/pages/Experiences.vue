@@ -1,7 +1,7 @@
 <template>
     <div class="Experiences container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ experiencesLabels.experiences }}
+        <h1 class="mt-5 mb-5">{{ langState.labels.experiences }}
             <font-awesome-icon :icon="['fas', 'user-doctor']" />
         </h1>
 
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import { markRaw } from 'vue';
 import '@/assets/css/PagesStyle.css';
 
@@ -53,48 +55,37 @@ export default {
 
     data() {
         return {
-            experiencesLabels: {},
+            // Gestion de la langue
+            langState: languageState,
+
+            // Gestion des sections
             activeTab: 'professionnelles',
             tabs: [],
         };
     },
     
     created() {
-        this.setLanguageAndLabels();
+        // Gestion des sections
+        this.setTabs();
+    },
+
+    watch: {
+        // Gestion de la langue
+        'langState.currentLang'() {
+            this.setTabs();
+        },
     },
 
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+        // Gestion de la langue
+        changeLangage,
 
-            document.documentElement.setAttribute('lang', lang);
-
-            if (lang === 'fr') {
-                this.experiencesLabels  = {
-                    experiences: "Expériences",
-                    professionnelles: "Professionnelles",
-                    stages: "Stages",
-                    mesProjets: "Mes projets",
-                };
-            } else {
-                this.experiencesLabels  = {
-                    professionnelles: "Professional",
-                    stages: "Internship",
-                    mesProjets: "My projects",
-                };
-            }
-
-            this.setTabs();
-        },
-
+        // Gestion des sections
         setTabs() {
             this.tabs = [
-                { id: 'professionnelles', label: this.experiencesLabels.professionnelles, component: markRaw(ProfessionnellesContent) },
-                { id: 'stages', label: this.experiencesLabels.stages, component: markRaw(StagesContent) },
-                { id: 'mesProjets', label: this.experiencesLabels.mesProjets, component: markRaw(ProjetsPerso) }
+                { id: 'professionnelles', label: this.langState.labels.professionnelles, component: markRaw(ProfessionnellesContent) },
+                { id: 'stages', label: this.langState.labels.stages, component: markRaw(StagesContent) },
+                { id: 'mesProjets', label: this.langState.labels.mesProjets, component: markRaw(ProjetsPerso) }
             ];
         },
     },

@@ -1,0 +1,30 @@
+export default {
+	accueil: 'Accueil',
+	profil: 'Profil',
+	experiences: 'Expériences',
+	competences: 'Compétences',
+	formations: 'Formations',
+	loisirs: 'Loisirs',
+	contact: 'Contact',
+
+	planDuSite: 'Plan du site',
+	mentionsLegales: 'Mentions légales',
+
+	benevolats: "Bénévolats",
+	sports: "Sports",
+	autres: "Autres loisirs",
+	programmation: "Programmation",
+	environnements: "Environnements",
+	professionnelles: "Professionnelles",
+	stages: "Stages",
+	mesProjets: "Mes projets",
+
+	nom: 'Nom complet :',
+	nomPlaceholder: 'Votre prénom et nom',
+	email: 'Adresse email :',
+	emailPlaceholder: 'Votre adresse email',
+	sujet: 'Sujet :',
+	sujetPlaceholder: 'Titre du sujet',
+	message: 'Message :',
+	messagePlaceholder: 'Votre message',
+};

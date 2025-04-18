@@ -1,24 +1,27 @@
 <template>
     <div class="Contact container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ contactLabels.contact }} <font-awesome-icon :icon="['fas', 'envelope']" /></h1>
+        <h1 class="mt-5 mb-5">{{ langState.labels.contact }} <font-awesome-icon :icon="['fas', 'envelope']" /></h1>
 
         <form @submit.prevent="sendMessage">
-            <label for="name">{{ contactLabels.nom }}</label>
-            <input v-model="form.name" type="text" class="form-control mb-5" id="name" :placeholder="contactLabels.nomPlaceholder" required />
+            <label for="name">{{ langState.labels.nom }}</label>
+            <input v-model="form.name" type="text" class="form-control mb-5" id="name"
+                :placeholder="langState.labels.nomPlaceholder" required />
 
-            <label for="email">{{ contactLabels.email }}</label>
+            <label for="email">{{ langState.labels.email }}</label>
             <input v-model="form.email" type="email" class="form-control mb-5" id="email"
-            :placeholder="contactLabels.emailPlaceholder" required />
+                :placeholder="langState.labels.emailPlaceholder" required />
 
-            <label for="subject">{{ contactLabels.sujet }}</label>
-            <input v-model="form.subject" type="text" class="form-control mb-5" id="subject" :placeholder="contactLabels.sujetPlaceholder" required />
+            <label for="subject">{{ langState.labels.sujet }}</label>
+            <input v-model="form.subject" type="text" class="form-control mb-5" id="subject"
+                :placeholder="langState.labels.sujetPlaceholder" required />
 
-            <label for="message">{{ contactLabels.message }}</label>
-            <textarea v-model="form.message" class="form-control mb-5" rows="5" id="message" :placeholder="contactLabels.messagePlaceholder" required></textarea>
+            <label for="message">{{ langState.labels.message }}</label>
+            <textarea v-model="form.message" class="form-control mb-5" rows="5" id="message"
+                :placeholder="langState.labels.messagePlaceholder" required></textarea>
 
             <div class="legendeCaptcha mb-4">
-                <div ref="recaptcha" class="g-recaptcha"></div>
+                <div ref="recaptcha"></div>
             </div>
 
             <div class="d-grid gap-2 col-4 col-sm-3 col-md-2 mx-auto">
@@ -42,15 +45,19 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import '@/assets/css/PagesStyle.css';
 
 export default {
     name: 'Contact',
-    
+
     data() {
         return {
-            contactLabels: {},
+            // Gestion de la langue
+            langState: languageState,
 
+            // Gestion du formulaire
             form: {
                 name: '',
                 email: '',
@@ -64,48 +71,11 @@ export default {
         };
     },
 
-    created() {
-        this.setLanguageAndLabels();
-    },
-
     methods: {
-        // Gestion du language
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
+        // Gestion de la langue
+        changeLangage,
 
-            document.documentElement.setAttribute('lang', lang);
-            
-            if (lang === 'fr') {
-                this.contactLabels  = {
-                    contact: 'Contact',
-                    nom: 'Nom complet :',
-                    nomPlaceholder: 'Votre prénom et nom',
-                    email: 'Adresse email :',
-                    emailPlaceholder: 'Votre adresse email',
-                    sujet: 'Sujet :',
-                    sujetPlaceholder: 'Titre du sujet',
-                    message: 'Message :',
-                    messagePlaceholder: 'Votre message',
-                };
-            } else {
-                this.contactLabels  = {
-                    contact: 'Contact',
-                    nom: 'Full name :',
-                    nomPlaceholder: 'Your firstname and lastname',
-                    email: 'Email address :',
-                    emailPlaceholder: 'Your email adress',
-                    sujet: 'Subject :',
-                    sujetPlaceholder: 'Subject title',
-                    message: 'Message :',
-                    messagePlaceholder: 'Your message',
-                };
-            }
-        },
-
-        // Envoi du formulaire
+        // Gestion du formulaire
         async sendMessage() {
             this.loading = true;
             this.successMessage = '';
@@ -158,24 +128,24 @@ export default {
     // Gestion du reCaptcha
     mounted() {
         const renderCaptcha = () => {
-            if (window.grecaptcha) {
-                window.grecaptcha.render(this.$refs.recaptcha, {
-                    sitekey: '6Lfp3RkrAAAAAKiTjPyzHOD5KmLRk76quIaG_YQV'
-                });
+            try {
+                if (typeof window.grecaptcha.render === 'function') {
+                    window.grecaptcha.render(this.$refs.recaptcha, {
+                        sitekey: '6Lfp3RkrAAAAAKiTjPyzHOD5KmLRk76quIaG_YQV'
+                    });
+                }
+            } catch (e) {
+                console.error('Erreur lors du rendu de reCAPTCHA : ', e);
             }
         };
 
-        if (window.grecaptcha) {
-            renderCaptcha();
-        } else {
-            const interval = setInterval(() => {
-                if (window.grecaptcha) {
-                    renderCaptcha();
-                    clearInterval(interval);
-                }
-            }, 500);
-        }
-    }
+        const waitForGrecaptcha = setInterval(() => {
+            if (window.grecaptcha && typeof window.grecaptcha.render === 'function') {
+                renderCaptcha();
+                clearInterval(waitForGrecaptcha);
+            }
+        }, 500);
+    },
 };
 </script>
 

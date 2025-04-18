@@ -1,7 +1,7 @@
 <template>
     <div class="Loisirs container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ loisirsLabels.loisirs }}
+        <h1 class="mt-5 mb-5">{{ langState.labels.loisirs }}
             <font-awesome-icon :icon="['fas', 'sun']" />
         </h1>
 
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import { markRaw } from 'vue';
 import '@/assets/css/PagesStyle.css';
 
@@ -53,49 +55,35 @@ export default {
 
     data() {
         return {
-            loisirsLabels: {},
+            // Gestion de la langue
+            langState: languageState,
+
+            // Gestion des sections
             activeTab: 'benevolat',
             tabs: [],
         };
     },
 
     created() {
-        this.setLanguageAndLabels();
+        this.setTabs();
+    },
+
+    watch: {
+        // Gestion de la langue
+        'langState.currentLang'() {
+            this.setTabs();
+        },
     },
 
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-            
-            if (lang === 'fr') {
-                this.loisirsLabels  = {
-                    loisirs: "Loisirs",
-                    benevolats: "Bénévolats",
-                    sports: "Sports",
-                    autres: "Autres loisirs",
-                };
-            } else {
-                this.loisirsLabels  = {
-                    loisirs: 'Hobbies',
-                    benevolats: "Volunteering",
-                    sports: "Sports",
-                    autres: "Other hobbies",
-                };
-            }
-
-            this.setTabs();
-        },
+        // Gestion de la langue
+        changeLangage,
 
         setTabs() {
             this.tabs = [
-                { id: 'benevolat', label: this.loisirsLabels.benevolats, component: markRaw(BenevolatContent) },
-                { id: 'sport', label: this.loisirsLabels.sports, component: markRaw(SportContent) },
-                { id: 'autre', label: this.loisirsLabels.autres, component: markRaw(AutreContent) },
+                { id: 'benevolat', label: this.langState.labels.benevolats, component: markRaw(BenevolatContent) },
+                { id: 'sport', label: this.langState.labels.sports, component: markRaw(SportContent) },
+                { id: 'autre', label: this.langState.labels.autres, component: markRaw(AutreContent) },
             ];
         },
     },

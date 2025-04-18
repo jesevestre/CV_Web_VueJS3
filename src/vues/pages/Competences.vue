@@ -1,7 +1,7 @@
 <template>
     <div class="Competences container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ programmationLabels.competences }}
+        <h1 class="mt-5 mb-5">{{ langState.labels.competences }}
             <font-awesome-icon :icon="['fas', 'computer']" />
         </h1>
 
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import { markRaw } from 'vue';
 import '@/assets/css/PagesStyle.css';
 
@@ -52,46 +54,35 @@ export default {
 
     data() {
         return {
-            programmationLabels: {},
+            // Gestion de la langue
+            langState: languageState,
+
+            // Gestion des sections
             activeTab: 'programmation',
             tabs: [],
         };
     },
 
     created() {
-        this.setLanguageAndLabels();
+        // Gestion des sections
+        this.setTabs();
+    },
+
+    watch: {
+        // Gestion de la langue
+        'langState.currentLang'() {
+            this.setTabs();
+        },
     },
 
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-
-            if (lang === 'fr') {
-                this.programmationLabels  = {
-                    competences: "Compétences",
-                    programmation: "Programmation",
-                    environnements: "Environnements",
-                };
-            } else {
-                this.programmationLabels  = {
-                    competences: "Skills",
-                    programmation: "Programming",
-                    environnements: "Environments",
-                };
-            }
-
-            this.setTabs();
-        },
+        // Gestion de la langue
+        changeLangage,
 
         setTabs() {
             this.tabs = [
-                { id: 'programmation', label: this.programmationLabels.programmation, component: markRaw(ProgrammationContent) },
-                { id: 'environnements', label: this.programmationLabels.environnements, component: markRaw(EnvironnementsContent) },
+                { id: 'programmation', label: this.langState.labels.programmation, component: markRaw(ProgrammationContent) },
+                { id: 'environnements', label: this.langState.labels.environnements, component: markRaw(EnvironnementsContent) },
             ];
         },
     },

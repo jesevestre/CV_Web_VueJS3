@@ -1,56 +1,33 @@
 <template>
     <footer class="footer text-center">
 		<span>
-			<router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ localLabels.planDuSite }}</router-link>
+			<router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ langState.labels.planDuSite }}</router-link>
 		</span>
 		&nbsp;|&nbsp;
 		<span>
-			<router-link class="footer_span" to="/pages/Contact" role="button" aria-label="Navigation vers contact">{{ localLabels.contact }}</router-link>
+			<router-link class="footer_span" to="/pages/Contact" role="button" aria-label="Navigation vers contact">{{ langState.labels.contact }}</router-link>
 		</span>
 		&nbsp;|&nbsp;
 		<span>
-			<router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ localLabels.mentionsLegales }}</router-link>
+			<router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ langState.labels.mentionsLegales }}</router-link>
 		</span>
 	</footer>
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 export default {
     name: 'Footer',
 
     data() {
         return {
-            localLabels: {}
+            langState: languageState,
         };
     },
 
-    created() {
-        this.setLanguageAndLabels();
-    },
-
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-
-            if (lang === 'fr') {
-                this.localLabels = {
-                    planDuSite: 'Plan du site',
-                    contact: 'Contact',
-                    mentionsLegales: 'Mentions légales',
-                };
-            } else {
-                this.localLabels = {
-                    planDuSite: 'Site map',
-                    contact: 'Contact',
-                    mentionsLegales: 'Legal notices',
-                };
-            }
-        },
+        changeLangage,
     },
 }
 </script>

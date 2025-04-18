@@ -5,39 +5,43 @@
 			<div class="navbar">
 				<div class="logo">
 					<router-link to="/" role="button" aria-label="Retour à la page d’accueil">
-                		{{ localLabelsMenu.accueil }}
+                		{{ langState.labels.accueil }}
             		</router-link>
 				</div>
 				<ul class="links">
 					<li>
 						<router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
-                        	{{ localLabelsMenu.profil }}
+                        	{{ langState.labels.profil }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Experiences" role="button" aria-label="Navigation vers les expériences">
-                        	{{ localLabelsMenu.experiences }}
+                        	{{ langState.labels.experiences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Competences" role="button" aria-label="Navigation vers les compétences">
-                        	{{ localLabelsMenu.competences }}
+                        	{{ langState.labels.competences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Formations" role="button" aria-label="Navigation vers les formations">
-                        	{{ localLabelsMenu.formations }}
+                        	{{ langState.labels.formations }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Loisirs" role="button" aria-label="Navigation vers les loisirs">
-                        	{{ localLabelsMenu.loisirs }}
+                        	{{ langState.labels.loisirs }}
                     	</router-link>
 					</li>
 				</ul>
 				<div class="buttons">
+					<a @click="changeLangage" aria-label="Changer la langue en français">
+                        <img src="@/assets/images/drapeauFR.jpg" class="drapeau" alt="Drapeau Français pour passer la langue en français" />
+						<img src="@/assets/images/drapeauUSA2.png" class="drapeau" alt="American flag to pass the langage in English" />
+                    </a>
 					<router-link to="/pages/Contact" class="action-button button-color1" role="button" aria-label="Navigation vers contact">
-                        {{ localLabelsMenu.contact }}
+                        {{ langState.labels.contact }}
                     </router-link>
 				</div>
 				<div class="burger-menu-button" @click="toggleMenu">
@@ -49,33 +53,37 @@
 				<ul class="links">
 					<li>
 						<router-link to="/pages/Profil" role="button" aria-label="Navigation vers le profil">
-                        	{{ localLabelsMenu.profil }}
+                        	{{ langState.labels.profil }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Experiences" role="button" aria-label="Navigation vers les expériences">
-                        	{{ localLabelsMenu.experiences }}
+                        	{{ langState.labels.experiences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Competences" role="button" aria-label="Navigation vers les compétences">
-                        	{{ localLabelsMenu.competences }}
+                        	{{ langState.labels.competences }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Formations" role="button" aria-label="Navigation vers les formations">
-                        	{{ localLabelsMenu.formations }}
+                        	{{ langState.labels.formations }}
                     	</router-link>
 					</li>
 					<li>
 						<router-link to="/pages/Loisirs" role="button" aria-label="Navigation vers les loisirs">
-                        	{{ localLabelsMenu.loisirs }}
+                        	{{ langState.labels.loisirs }}
                     	</router-link>
 					</li>
 					<div class="divider"></div>
 					<div class="buttons-burger-menu">
+						<a @click="changeLangage" aria-label="Changer la langue en français">
+							<img src="@/assets/images/drapeauFR.jpg" class="drapeau-buttons-burger" alt="Drapeau Français pour passer la langue en français" />
+							<img src="@/assets/images/drapeauUSA2.png" class="drapeau-buttons-burger" alt="American flag to pass the langage in English" />
+						</a>
 						<router-link to="/pages/Contact" class="action-button button-color1" role="button" aria-label="Navigation vers contact">
-                        	{{ localLabelsMenu.contact }}
+                        	{{ langState.labels.contact }}
                     	</router-link>
 					</div>
 				</ul>
@@ -86,6 +94,8 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import '@/assets/css/PagesStyle.css';
 
 export default {
@@ -93,46 +103,13 @@ export default {
 
 	data() {
         return {
-			localLabelsMenu: {},
+			langState: languageState,
             isMenuOpen: false,
         };
     },
 
-	created() {
-        this.setLanguageAndLabels();
-    },
-
 	methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-
-			if (lang === 'fr') {
-				this.localLabelsMenu = {
-					accueil: 'Accueil',
-					profil: 'Profil',
-					experiences: 'Expériences',
-					competences: 'Compétences',
-					formations: 'Formations',
-					loisirs: 'Loisirs',
-					contact: 'Contact',
-				};
-			} else {
-				this.localLabelsMenu = {
-					accueil: 'Home',
-					profil: 'Profile',
-					experiences: 'Experiences',
-					competences: 'Skills',
-					formations: 'Education',
-					loisirs: 'Hobbies',
-					contact: 'Contact',
-				};
-			}
-		},
+		changeLangage,
 
 		toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
@@ -204,6 +181,24 @@ header {
 	font-weight: bold;
 	cursor: pointer;
 }
+.drapeau {
+    position: absolute;
+    right: 105px;
+    top: 11px;
+    height: 38px;
+	border-radius: 4px;
+    cursor: pointer;
+
+}
+.drapeau-buttons-burger {
+	position: absolute;
+    top: 300px;
+    height: 38px;
+	left: 36%;
+	border-radius: 4px;
+    cursor: pointer;
+
+}
 
 /* Burger menu */
 .burger-menu {
@@ -248,12 +243,12 @@ header {
 	flex-direction: column;
 }
 .burger-menu.open {
-	height: 305px;
+	height: 350px;
 	opacity: 1;
 }
 
 /* Accessiblité mobile/tablette/PC */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
 	.navbar .links,
 	.navbar .buttons {
 		display: none;
@@ -265,11 +260,14 @@ header {
 		display: block;
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 350px) {
 	.burger-menu {
 		width: unset;
 		right: 1.5rem;
 		left: 1.5rem;
+	}
+	.drapeau-buttons-burger {
+		left: 40%;
 	}
 }
 </style>

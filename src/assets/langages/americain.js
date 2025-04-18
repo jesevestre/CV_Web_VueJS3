@@ -1,0 +1,30 @@
+export default {
+	accueil: 'Home',
+	profil: 'Profile',
+	experiences: 'Experiences',
+	competences: 'Skills',
+	formations: 'Education',
+	loisirs: 'Hobbies',
+	contact: 'Contact',
+
+	planDuSite: 'Site map',
+	mentionsLegales: 'Legal notices',
+
+	benevolats: "Volunteering",
+	sports: "Sports",
+	autres: "Other hobbies",
+	programmation: "Programming",
+	environnements: "Environments",
+	professionnelles: "Professional",
+	stages: "Internship",
+	mesProjets: "My projects",
+
+	nom: 'Full name :',
+	nomPlaceholder: 'Your firstname and lastname',
+	email: 'Email address :',
+	emailPlaceholder: 'Your email adress',
+	sujet: 'Subject :',
+	sujetPlaceholder: 'Subject title',
+	message: 'Message :',
+	messagePlaceholder: 'Your message',
+};

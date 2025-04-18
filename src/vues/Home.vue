@@ -14,19 +14,19 @@
 
 			<div class="container-btns" role="navigation" aria-label="Navigation principale">
 				<router-link to="/pages/Profil" class="btn-first b1" role="button" aria-label="Navigation vers le profil">
-					{{ labels.profil }}
+					{{ langState.labels.profil }}
 				</router-link>
 				<router-link to="/pages/Experiences" class="btn-first b2" role="button" aria-label="Navigation vers les expériences">
-					{{ labels.experiences }}
+					{{ langState.labels.experiences }}
 				</router-link>
 				<router-link to="/pages/Competences" class="btn-first b3" role="button" aria-label="Navigation vers les compétences">
-					{{ labels.competences }}
+					{{ langState.labels.competences }}
 				</router-link>
 				<router-link to="/pages/Formations" class="btn-first b4" role="button" aria-label="Navigation vers les formations">
-					{{ labels.formations }}
+					{{ langState.labels.formations }}
 				</router-link>
 				<router-link to="/pages/Loisirs" class="btn-first b5" role="button" aria-label="Navigation vers les loisirs">
-					{{ labels.loisirs }}
+					{{ langState.labels.loisirs }}
 				</router-link>
 			</div>
 			
@@ -68,15 +68,15 @@
 
         <footer class="footer text-center">
             <span>
-                <router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ labels.planDuSite }}</router-link>
+                <router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ langState.labels.planDuSite }}</router-link>
             </span>
             &nbsp;|&nbsp;
             <span>
-                <router-link class="footer_span" to="/pages/Contact" role="button" aria-label="Navigation vers contact">{{ labels.contact }}</router-link>
+                <router-link class="footer_span" to="/pages/Contact" role="button" aria-label="Navigation vers contact">{{ langState.labels.contact }}</router-link>
             </span>
             &nbsp;|&nbsp;
             <span>
-                <router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ labels.mentionsLegales }}</router-link>
+                <router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ langState.labels.mentionsLegales }}</router-link>
             </span>
         </footer>
 
@@ -85,46 +85,13 @@
 
 
 <script setup>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import { gsap } from "gsap";
 import { ref, watchEffect, onMounted, nextTick } from 'vue';
 
 // Gestion de la langue
-const languages = ['fr', 'en'];
-const browserLang = navigator.language.slice(0, 2);
-const defaultLang = languages.includes(browserLang) ? browserLang : 'fr';
-const currentLang = ref(localStorage.getItem('lang') || defaultLang);
-document.documentElement.setAttribute('lang', currentLang.value);
-const translations = {
-	fr: {
-		profil: 'Profil',
-		experiences: 'Expériences',
-		competences: 'Compétences',
-		formations: 'Formations',
-		loisirs: 'Loisirs',
-		planDuSite: 'Plan du site',
-		contact: 'Contact',
-		mentionsLegales: 'Mentions légales',
-	},
-	en: {
-		profil: 'Profile',
-		experiences: 'Experiences',
-		competences: 'Skills',
-		formations: 'Education',
-		loisirs: 'Hobbies',
-		planDuSite: 'Site map',
-		contact: 'Contact',
-		mentionsLegales: 'Legal notices',
-	},
-};
-
-const labels = ref(translations[currentLang.value]);
-
-const changeLangage = () => {
-	currentLang.value = currentLang.value === 'fr' ? 'en' : 'fr';
-	labels.value = translations[currentLang.value];
-	localStorage.setItem('lang', currentLang.value);
-    document.documentElement.setAttribute('lang', currentLang.value);
-};
+const langState = languageState;
 
 // Mode sombre
 const isDarkMode = ref(false);

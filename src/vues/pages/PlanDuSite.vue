@@ -1,7 +1,7 @@
 <template>
     <div class="PlanDuSite container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ planDuSiteLabels.planDuSite }} <font-awesome-icon :icon="['fas', 'sitemap']" /></h1>
+        <h1 class="mt-5 mb-5">{{ langState.labels.planDuSite }} <font-awesome-icon :icon="['fas', 'sitemap']" /></h1>
 
         <div class="text-center">
             <div class="table-responsive">
@@ -10,7 +10,7 @@
                         <tr>
                             <td colspan="2">
                                 <router-link to="/" class="btn button-color2 pt-3 pb-3 fw-bold text-decoration-none col-12" role="button" aria-label="Retour à la page d’accueil">
-                                    Accueil
+                                    {{ langState.labels.accueil }}
                                 </router-link>
                             </td>
                         </tr>
@@ -25,12 +25,12 @@
                         <tr>
                             <td>
                                 <router-link to="/pages/Profil" class="btn button-color4 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers profil">
-                                    Profil
+                                    {{ langState.labels.profil }}
                                 </router-link>
                             </td>
                             <td>
                                 <router-link to="/pages/Contact" class="btn button-color1 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers contact">
-                                    Contact
+                                    {{ langState.labels.contact }}
                                 </router-link>
                             </td>
                         </tr>
@@ -44,19 +44,19 @@
                         <tr>
                             <td>
                                 <router-link to="/pages/Experiences" class="btn button-color3 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers expériences">
-                                    Expériences
+                                    {{ langState.labels.experiences }}
                                 </router-link>
                             </td>
                             <td>
                                 <router-link to="/pages/Experiences" class="btn hidden col-12" role="button" aria-label="Navigation vers expériences">
-                                    Expériences
+                                    {{ langState.labels.experiences }}
                                 </router-link>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <router-link to="/pages/Competences" class="btn button-color4 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers compétences">
-                                    Compétences
+                                    {{ langState.labels.competences }}
                                 </router-link>
                             </td>
                             <td>
@@ -65,7 +65,7 @@
                         <tr>
                             <td>
                                 <router-link to="/pages/Formations" class="btn button-color1 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers formations">
-                                    Formations
+                                    {{ langState.labels.formations }}
                                 </router-link>
                             </td>
                             <td>
@@ -81,7 +81,7 @@
                         <tr>
                             <td>
                                 <router-link to="/pages/Loisirs" class="btn button-color2 fw-bold text-decoration-none col-12" role="button" aria-label="Navigation vers loisirs">
-                                    Loisirs
+                                    {{ langState.labels.loisirs }}
                                 </router-link>
                             </td>
                             <td class="pt-5 pb-5">
@@ -97,6 +97,8 @@
 
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import '@/assets/css/PagesStyle.css';
 
 export default {
@@ -104,33 +106,14 @@ export default {
 
     data() {
         return {
-            planDuSiteLabels: {},
+            // Gestion de la langue
+            langState: languageState,
         };
     },
 
-    created() {
-        this.setLanguageAndLabels();
-    },
-
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-            
-            if (lang === 'fr') {
-                this.planDuSiteLabels  = {
-                    planDuSite: "Plan du site",
-                };
-            } else {
-                this.planDuSiteLabels  = {
-                    planDuSite: 'Site map',
-                };
-            }
-        },
+        // Gestion de la langue
+        changeLangage,
     },
 }
 </script>

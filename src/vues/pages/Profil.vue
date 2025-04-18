@@ -1,7 +1,7 @@
 <template>
     <div class="Profil container mb-5">
 
-        <h1 class="mt-5 mb-5">{{ profilLabels.profil }} <font-awesome-icon :icon="['fas', 'id-card-clip']" />
+        <h1 class="mt-5 mb-5">{{ langState.labels.profil }} <font-awesome-icon :icon="['fas', 'id-card-clip']" />
         </h1>
 
         <ProfilContent />
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { languageState, changeLangage } from '@/assets/langages/langService';
+
 import '@/assets/css/PagesStyle.css';
 
 import ProfilContent from '@/components/pages/ProfilContent.vue';
@@ -27,33 +29,14 @@ export default {
 
     data() {
         return {
-            profilLabels: {},
+            // Gestion de la langue
+            langState: languageState,
         };
     },
 
-    created() {
-        this.setLanguageAndLabels();
-    },
-
     methods: {
-        setLanguageAndLabels() {
-            const supportedLangs = ['fr', 'en'];
-            const browserLang = navigator.language.slice(0, 2);
-            const savedLang = localStorage.getItem('lang');
-            const lang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'fr');
-
-            document.documentElement.setAttribute('lang', lang);
-            
-            if (lang === 'fr') {
-                this.profilLabels  = {
-                    profil: "Profil",
-                };
-            } else {
-                this.profilLabels  = {
-                    profil: 'Profile',
-                };
-            }
-        },
+        // Gestion de la langue
+        changeLangage,
     },
 };
 </script>
