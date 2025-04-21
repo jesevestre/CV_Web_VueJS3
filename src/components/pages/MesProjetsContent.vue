@@ -14,24 +14,14 @@
             </div>
         </div>
 
-        <div class="pb-3">
+        <div class="pb-5">
             <span><b>Community manager des réseaux sociaux d'un salon de coiffure, MilInstitut, Orsay (91)</b> Depuis Décembre 2024</span>
             <ul>
                 <li>• Gestion des réseaux sociaux tels que Facebook et Instagram pour la <b>promotion</b> et présenter les <b>évènements</b> du salon de coiffure tout au long de l'année.</li>
                 <li>• Proposition de post pour <b>dynamiser</b> les pages du salon de coiffure pour garder les abonnés inscrits et informer des dernières actualités.</li>
             </ul>
-        </div>
-
-        <div class="pb-5">
-            <span><b>Associé webmaster dans le lancement d'un centre de préparation et de récupération sportive, SmartRécup, Lille (59)</b> Depuis Avril 2024</span>
-            <ul>
-                <li>• Réalisation de la <b>vitrine</b> du site web pour promouvoir l'activité, associée à la création d'un système complexe de <b>prise de rendez-vous</b>. Ceci comprend entre autres l'outil de gestion et de visualisation des <b>réservations</b> pour le praticien par un système <b>admin/clients</b>.</li>
-                <li>• Développement d'une section <b>évènements</b> utile lors des déplacements du praticien.</li>
-                <li>• Amélioration régulière du <b>SEO</b> et conception <b>responsive</b> pour garantir de <b>l'accessibilité</b>.</li>
-                <li>• Prospections, recherche active de <b>partenariat</b> et organisation de <b>collaborations</b>.</li>
-            </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://samesport.free.fr/" aria-label="Lien internet vers SameSport" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">smartrécup.fr</a>
+                <a href="https://www.milinstitut.fr/" aria-label="Lien internet vers Mil Institut" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">milinstitut.fr</a>
             </div>
         </div>
 
@@ -42,7 +32,7 @@
                 <li>• Site web réalisé avec le Framework VueJS-2 contenant présentement un carrousel avec un zoom image, un système d'onglet permettant d'afficher les informations hiérarchiquement, un système de routeur avec des animations entre les vues, une boutique en ligne permettant de vendre des produits sportifs, une page de contact, et enfin un en-tête/pied de page avec Bootstrap5.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://m.training.free.fr/" aria-label="Lien internet vers M Training" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">m.training.fr</a>
+                <a href="https://m.training.free.fr/" aria-label="Lien internet vers M Training" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">m.training.fr</a>
             </div>
         </div>
 
@@ -60,7 +50,7 @@
                 </li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
-                <a href="http://jsevestre02.free.fr/" aria-label="Lien internet actuel" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">jsevestre.fr</a>
+                <a href="https://jbsevestre.fr/" aria-label="Lien internet actuel" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">jbsevestre.fr</a>
             </div>
         </div>
 
@@ -103,7 +93,7 @@ export default {
     methods: {
         Rapport_Final_DontForget() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Rapport_Final_DontForget.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/Rapport_Final_DontForget.pdf';
             lien.setAttribute('download', 'Rapport_Final_DontForget.pdf');
             document.body.appendChild(lien);
             lien.click();
@@ -111,7 +101,7 @@ export default {
         },
         Projet_Tutoré_GlobeLED_SEVESTRE() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Projet_Tutore_GlobeLED_SEVESTRE.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/Projet_Tutore_GlobeLED_SEVESTRE.pdf';
             lien.setAttribute('download', 'Projet_Tutoré_GlobeLED_SEVESTRE.pdf');
             document.body.appendChild(lien);
             lien.click();

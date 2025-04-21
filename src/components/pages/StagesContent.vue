@@ -82,7 +82,7 @@ export default {
     methods: {
         Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master.pdf';
             lien.setAttribute('download', 'Memoire_de_stage_Jean_Baptiste_SEVESTRE_Master.pdf');
             document.body.appendChild(lien);
             lien.click();
@@ -90,7 +90,7 @@ export default {
         },
         Oral_Jean_Baptiste_SEVESTRE_Master() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_Master.pptx';
+            lien.href = 'https://jbsevestre.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_Master.pptx';
             lien.setAttribute('download', 'Oral_Jean_Baptiste_SEVESTRE_Master.pptx');
             document.body.appendChild(lien);
             lien.click();
@@ -99,7 +99,7 @@ export default {
 
         Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence.pdf';
             lien.setAttribute('download', 'Rapport_de_stage_Jean_Baptiste_SEVESTRE_Licence.pdf');
             document.body.appendChild(lien);
             lien.click();
@@ -107,7 +107,7 @@ export default {
         },
         Oral_Jean_Baptiste_SEVESTRE_Licence() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_Licence.ppt';
+            lien.href = 'https://jbsevestre.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_Licence.ppt';
             lien.setAttribute('download', 'Oral_Jean_Baptiste_SEVESTRE_Licence.ppt');
             document.body.appendChild(lien);
             lien.click();
@@ -116,7 +116,7 @@ export default {
 
         Rapport_De_Stage_Jean_Baptiste_SEVESTRE_IUT() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Rapport_de_stage_Jean_Baptiste_SEVESTRE_IUT.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/Rapport_de_stage_Jean_Baptiste_SEVESTRE_IUT.pdf';
             lien.setAttribute('download', 'Rapport_De_Stage_Jean_Baptiste_SEVESTRE_IUT.pdf');
             document.body.appendChild(lien);
             lien.click();
@@ -124,7 +124,7 @@ export default {
         },
         Oral_Jean_Baptiste_SEVESTRE_IUT() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_IUT.pptx';
+            lien.href = 'https://jbsevestre.fr/fichiers/Oral_Jean_Baptiste_SEVESTRE_IUT.pptx';
             lien.setAttribute('download', 'Oral_Jean_Baptiste_SEVESTRE_IUT.pptx');
             document.body.appendChild(lien);
             lien.click();

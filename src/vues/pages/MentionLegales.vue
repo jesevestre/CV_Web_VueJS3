@@ -13,7 +13,7 @@
 
         <p>Les marques citées sur le site sont déposées par les sociétés ou organismes qui en sont propriétaires. Leur reproduction ou utilisation, de quelque sorte, est interdite sauf autorisation expresse.</p>
 
-        <p>La présence de liens hypertextes renvoyant vers d’autres sites ne constitue pas une garantie sur la qualité de contenu ou de bon fonctionnement desdits sites. Notre responsabilité ne saurait être engagée quant au contenu de ces sites ou leurs conditions d’accès. L’internaute doit utiliser ces informations avec les précautions d’usage. Par ailleurs, Monsieur Jean-baptiste SEVESTRE ne saurait être tenu responsable du contenu des sites ayant établi un lien hypertexte vers le site <a href="http://jsevestre02.free.fr" aria-label="Lien internet actuel">jsevestre02.free.fr</a></p>
+        <p>La présence de liens hypertextes renvoyant vers d’autres sites ne constitue pas une garantie sur la qualité de contenu ou de bon fonctionnement desdits sites. Notre responsabilité ne saurait être engagée quant au contenu de ces sites ou leurs conditions d’accès. L’internaute doit utiliser ces informations avec les précautions d’usage. Par ailleurs, Monsieur Jean-baptiste SEVESTRE ne saurait être tenu responsable du contenu des sites ayant établi un lien hypertexte vers le site <a href="https://jbsevestre.fr" aria-label="Lien internet actuel">jbsevestre.fr</a></p>
 
         <p>Il est expressément entendu que tout litige lié à l’utilisation du site sera soumis à la loi française</p>
 
@@ -25,7 +25,7 @@
             <h1 class="mt-5 mb-3">Politique de confidentialité</h1>
             <h4 class="mb-3">RESPONSABLE DU TRAITEMENT</h4>
 
-            <p>Les données à caractère personnel collectées au travers des sites <a href="http://jsevestre02.free.fr" aria-label="Lien du site internet actuel">jsevestre02.free.fr</a> sont traitées par le directeur de publication dans le respect des lois francaises de protection des données, en qualité de responsable du traitement.</p>
+            <p>Les données à caractère personnel collectées au travers des sites <a href="https://jbsevestre.fr" aria-label="Lien du site internet actuel">jbsevestre.fr</a> sont traitées par le directeur de publication dans le respect des lois francaises de protection des données, en qualité de responsable du traitement.</p>
 
             <p>Ses coordonnées sont :</p>
             <p><b>Contact téléphonique <font-awesome-icon :icon="['fas', 'phone']" /> : </b>

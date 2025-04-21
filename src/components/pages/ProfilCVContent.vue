@@ -32,7 +32,7 @@ export default {
     methods: {
         CV_Jean_Baptiste_SEVESTRE() {
             const lien = document.createElement('a');
-            lien.href = 'http://jsevestre02.free.fr/fichiers/CV_Jean_Baptiste_SEVESTRE.pdf';
+            lien.href = 'https://jbsevestre.fr/fichiers/CV_Jean_Baptiste_SEVESTRE.pdf';
             lien.setAttribute('download', 'CV_Jean_Baptiste_SEVESTRE.pdf');
             document.body.appendChild(lien);
             lien.click();

@@ -2,7 +2,23 @@
     <div>
         
         <div class="pb-5">
-            <span><b>Développeur web, Média-immo, Corbeil-Essonnes (91)</b> Novembre 2022 - Avril 2025</span>
+            <span><b>Développeur web, Média-immo, Corbeil-Essonnes (91)</b> Avril 2024 - Mai 2025</span>
+            <ul>
+                <li>•	Développement du site web par la création de la <b>vitrine en ligne</b> et d’un système complexe de <b>prise de rendez-vous</b> pour les clients. Ceci comprend l’outil de gestion et de visualisation des réservations pour le praticien par un système <b>admin/clients</b> très complet.</li>
+
+                <li>• Amélioration régulière du <b>SEO</b> et conception <b>responsive</b> pour garantir de <b>l'accessibilité</b> pour tous.</li>
+
+                <li>• Développement d'une section <b>Evènements</b> utile lors des déplacements ponctuel du praticien pour organiser ses crénaux de massage de façon simple et fluide.</li>
+
+                <li>• Prospections, recherche active de <b>partenariat</b> et organisation de <b>collaborations</b> stratégiques.</li>
+            </ul>
+            <div class="row col-12 align-items-center justify-content-center">
+                <a href="http://samesport.free.fr/" aria-label="Lien internet vers SmartRécup" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">smartrécup.fr</a>
+            </div>
+        </div>
+
+        <div class="pb-5">
+            <span><b>Développeur web, Média-immo, Corbeil-Essonnes (91)</b> Novembre 2022 - Avril 2024</span>
             <ul>
                 <li>•	Reprendre l’évolution de l’application Mairie-Urba permettant la <b>transmission dématérialisée et instantanée</b> des autorisations d’urbanisme entre les demandeurs et les mairies.</li>
 

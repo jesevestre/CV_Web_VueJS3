@@ -7,7 +7,7 @@
             CMS <b>WordPress</b>.
         </p>
 
-        <p>• Je joue aussi de temps en temps à Cities-Skylines II, Transport-Fever 2 et Factorio qui sont
+        <p>• Je joue aussi de temps en temps à Cities-SkylinesII, Transport-Fever2 et MiniMétro qui sont
             des jeux de création et de <b>gestion de ville</b>.</p>
 
         <p>• Je posséde le permis <b>voiture, grande remorque et bateau côtier</b>. A présent quand j'en ai

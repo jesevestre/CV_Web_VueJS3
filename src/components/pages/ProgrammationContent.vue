@@ -124,11 +124,11 @@ export default {
                 new Chart(graphCanvas.value, {
                     type: "radar",
                     data: {
-                        labels: ["Echelle", "PHP", "HTML/CSS", "SQL", "JavaScript", "VueJS2", "Symfony4/5"],
+                        labels: ["Echelle", "PHP", "HTML/CSS", "SQL", "JavaScript", "VueJS2", "WordPress"],
                         datasets: [
                             {
                                 label: "Maîtrise des langages",
-                                data: [0, 7, 9, 8, 6, 6, 2],
+                                data: [0, 7, 9, 8, 6, 6, 4],
                                 backgroundColor: "rgba(203, 200, 192, 0.7)",
                                 borderColor: "#32CD32",
                                 borderWidth: 2.5,
