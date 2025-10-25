@@ -418,6 +418,11 @@ footer {
     }
 }
 
+@media screen and (max-width: 1363px) {
+    .divMaPhoto {
+        bottom: 3%;
+    }
+}
 @media screen and (max-width: 1026px) {
     h1 {
         font-size: 9ch;
@@ -430,9 +435,6 @@ footer {
     }
     .button-banniere a {
         margin-left: -50%;
-    }
-    .divMaPhoto {
-        bottom: 5%;
     }
     .maPhoto {
         width: 150px;
