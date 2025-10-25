@@ -2,7 +2,17 @@
     <div>
         
         <div class="pb-5">
-            <span><b>Développeur web, Média-immo, Corbeil-Essonnes (91)</b> Avril 2024 - Mai 2025</span>
+            <span><b>Ingénieur développeur web, Fontenay-aux-Roses (92)</b> Depuis Mai 2025</span>
+            <ul>
+                <li>•	En construction</li>
+            </ul>
+            <div class="row col-12 align-items-center justify-content-center">
+                <a href="https://www.cea.fr/" aria-label="Lien internet vers le CEA" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">cea.fr</a>
+            </div>
+        </div>
+
+        <div class="pb-5">
+            <span><b>Web master, Lille (59)</b> Avril 2024 - Janvier 2025</span>
             <ul>
                 <li>•	Développement du site web par la création de la <b>vitrine en ligne</b> et d’un système complexe de <b>prise de rendez-vous</b> pour les clients. Ceci comprend l’outil de gestion et de visualisation des réservations pour le praticien par un système <b>admin/clients</b> très complet.</li>
 
@@ -58,6 +68,9 @@
 
                 <li>• Utilisation du logiciel d'analyse de visualisation de données <b>POWER-BI</b> (low-code).</li>
             </ul>
+            <div class="row col-12 align-items-center justify-content-center">
+                <a href="https://isoar.fr/" aria-label="Lien internet vers le site web Isoar" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">isoar.fr</a>
+            </div>
         </div>
 
     </div>

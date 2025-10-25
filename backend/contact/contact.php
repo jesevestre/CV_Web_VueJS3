@@ -5,7 +5,8 @@ require_once __DIR__ . '/../recaptcha/autoload.php';
 
 // Configuration des en-têtes
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Content-Type: text/plain; charset=utf-8");
 
 // Vérification des données POST
@@ -15,6 +16,10 @@ $subject = trim($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
 $recaptchaResponse = $_POST['recaptcha_response'] ?? '';
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
+    return;
+}
 // Vérification de la méthode
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -41,7 +46,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Validation du Recaptcha
-if(!empty($_POST["recaptcha-response"])) {
+if(!empty($_POST["recaptcha_response"])) {
     $recaptcha = new \ReCaptcha\ReCaptcha("6Lfp3RkrAAAAAHyCORnP0e0AYd59QeRjl3kpYaGk");
     $resp = $recaptcha->verify($recaptchaResponse);
     if(!$resp->isSuccess()) {
@@ -55,12 +60,23 @@ $to = "sevestre.jb@gmail.com";
 $headers = [
     "From: contact@jbsevestre.fr",
     "Reply-To: $email",
-    "Content-Type: text/plain; charset=UTF-8"
+    "MIME-Version: 1.0",
+    "Content-Type: text/html; charset=UTF-8"
 ];
-$fullMessage = "Sujet: $subject\n\n\nMessage:\n$message\n\n\nNom de l'expéditeur: $name";
+$fullMessage = "
+    <html>
+    <body style='font-family: Arial, sans-serif;'>
+        <h2 style='color:#444;'>📩 Nouveau message depuis le formulaire de contact jbsevestre.fr</h2>
+        <p><b>Sujet :</b> $subject</p>
+        <p><b>Message :</b><br />" . nl2br($message) . "</p>
+        <p><b>Nom de l'expéditeur :</b> $name</p>
+        <p><b>Email de l'expéditeur :</b> $email</p>
+    </body>
+    </html>
+";
 
-// Envoi de l'e-mail
-if (mail($to, "Message depuis le formulaire jbsevestre.fr", $fullMessage, implode("\r\n", $headers))) {
+// Envoi de l'email
+if (mail($to, "Message depuis le site web jbsevestre.fr", $fullMessage, implode("\r\n", $headers) . "\r\n")) {
     echo "successMessage";
 } else {
     echo "errorMessage4"; // Erreur serveur

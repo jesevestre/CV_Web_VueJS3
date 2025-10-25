@@ -118,7 +118,8 @@ export default {
                     this.errorMessage = text || 'Une erreur inconnue c\'est produite, veuillez réessayer ';
                 }
             } catch (error) {
-                this.errorMessage = text || 'Impossible d\'envoyer le message, le formulaire n\'est pas parvenu jusqu\'au back ';
+                this.errorMessage = 'Impossible d\'envoyer le message, le formulaire n\'est pas parvenu jusqu\'au back ';
+                console.error(error);
             } finally {
                 this.loading = false;
             }
