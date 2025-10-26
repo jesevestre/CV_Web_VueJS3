@@ -4,7 +4,11 @@
         <div class="pb-5">
             <span><b>Ingénieur développeur web, Fontenay-aux-Roses (92)</b> Depuis Mai 2025</span>
             <ul>
-                <li>•	En construction</li>
+                <li>•	Conception et développement d'outils informatiques.</li>
+
+                <li>•	Développeur d'une application métier de gestion des données nommée BATLab à destination des chercheurs.</li>
+
+                <li>•	Application en PHP 8.4 POO & JQuery.</li>
             </ul>
             <div class="row col-12 align-items-center justify-content-center">
                 <a href="https://www.cea.fr/" aria-label="Lien internet vers le CEA" class="btn btn-success fw-bold col-8 col-sm-6 col-md-4" target="_blank">cea.fr</a>
