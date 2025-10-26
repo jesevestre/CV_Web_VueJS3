@@ -99,8 +99,8 @@ const toggleDarkMode = () => {
 	isDarkMode.value = !isDarkMode.value;
 };
 const applyDarkMode = () => {
-	document.documentElement.style.setProperty('--background', isDarkMode.value ? 'rgba(60, 60, 60, 0.6)' : 'rgba(60, 60, 60, 0.3)');
-	document.documentElement.style.setProperty('--background-btn', isDarkMode.value ? 'rgba(60, 60, 60, 0.9)' : 'rgba(60, 60, 60, 0.45)');
+	document.documentElement.style.setProperty('--background', isDarkMode.value ? 'rgba(60, 60, 60, 0.8)' : 'rgba(60, 60, 60, 0.3)');
+	document.documentElement.style.setProperty('--background-btn', isDarkMode.value ? 'rgba(60, 60, 60, 0.8)' : 'rgba(60, 60, 60, 0.45)');
 };
 watchEffect(applyDarkMode);
 
@@ -411,7 +411,7 @@ footer {
         bottom: 63%;
     }
     .container-btns {
-        top: 200px;
+        top: 100px;
     }
     .button-banniere-vert {
         padding-right: 1%;
@@ -419,15 +419,16 @@ footer {
 }
 
 @media screen and (max-width: 1363px) {
+    h1 {
+        font-size: 8ch;
+    }
     .divMaPhoto {
-        bottom: 3%;
+        bottom: 4%;
     }
 }
-@media screen and (max-width: 1026px) {
-    h1 {
-        font-size: 9ch;
-    }
+@media screen and (max-width: 1093px) {
     .container-btns {
+        top: 30px;
         margin-right: 15%;
     }
     .button-banniere {
@@ -442,7 +443,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 783px) {
     h1 {
         font-size: 6ch;
         font-weight: 500;
@@ -460,7 +461,7 @@ footer {
         width: 90px;
     }
     .container-btns {
-        top: 150px;
+        top: 20px;
     }
 }
 
