@@ -4,9 +4,10 @@ import Home from '@/vues/Home.vue';
 
 import PagesLayout from '@/vues/pages/PagesLayout.vue';
 
-import MentionLegales from '@/vues/pages/MentionLegales.vue';
 import PlanDuSite from '@/vues/pages/PlanDuSite.vue';
 import Contact from '@/vues/pages/Contact.vue';
+import MentionLegales from '@/vues/pages/MentionLegales.vue';
+import Stats from '@/vues/pages/Statistiques.vue';
 
 import Profil from '@/vues/pages/Profil.vue';
 import Experiences from '@/vues/pages/Experiences.vue';
@@ -21,9 +22,10 @@ const routes = [
 		name: 'pages',
 		component: PagesLayout,
 		children: [
-			{ path: 'MentionLegales', name: 'MentionLegales', component: MentionLegales },
 			{ path: 'PlanDuSite', name: 'PlanDuSite', component: PlanDuSite },
 			{ path: 'Contact', name: 'Contact', component: Contact },
+			{ path: 'MentionLegales', name: 'MentionLegales', component: MentionLegales },
+			{ path: 'Statistiques', name: 'statistiquesVisiteurs', component: Stats },
 
 			{ path: 'Profil', name: 'Profil', component: Profil },
 			{ path: 'Experiences', name: 'Experiences', component: Experiences },

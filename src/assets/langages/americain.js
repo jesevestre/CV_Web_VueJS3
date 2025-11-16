@@ -8,7 +8,8 @@ export default {
 	contact: 'Contact',
 
 	planDuSite: 'Site map',
-	mentionsLegales: 'Legal notices',
+	cgu: 'T&C',
+	stats: 'Stats',
 
 	benevolats: "Volunteering",
 	sports: "Sports",
@@ -18,6 +19,7 @@ export default {
 	professionnelles: "Professional",
 	stages: "Internship",
 	mesProjets: "My projects",
+	statistiquesVisiteurs: "Visitor statistics",
 
 	nom: 'Full name :',
 	nomPlaceholder: 'Your firstname and lastname',
@@ -27,4 +29,18 @@ export default {
 	sujetPlaceholder: 'Subject title',
 	message: 'Message :',
 	messagePlaceholder: 'Your message',
+
+	mois: 'Month',
+	janvier: 'January',
+	fevrier: 'February',
+	mars: 'March',
+	avril: 'April',
+	mai: 'May',
+	juin: 'June',
+	juillet: 'July',
+	aout: 'August',
+	septembre: 'September',
+	octobre: 'October',
+	novembre: 'November',
+	decembre: 'December',
 };

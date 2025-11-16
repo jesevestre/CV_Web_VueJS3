@@ -9,7 +9,11 @@
 		</span>
 		&nbsp;|&nbsp;
 		<span>
-			<router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ langState.labels.mentionsLegales }}</router-link>
+			<router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les CGU">{{ langState.labels.cgu }}</router-link>
+		</span>
+		&nbsp;|&nbsp;
+		<span>
+			<router-link class="footer_span" to="/pages/Statistiques" role="button" aria-label="Navigation vers les statistiques">{{ langState.labels.stats }}</router-link>
 		</span>
 	</footer>
 </template>

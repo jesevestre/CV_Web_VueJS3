@@ -76,7 +76,11 @@
             </span>
             &nbsp;|&nbsp;
             <span>
-                <router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les mentions légales">{{ langState.labels.mentionsLegales }}</router-link>
+			<router-link class="footer_span" to="/pages/MentionLegales" role="button" aria-label="Navigation vers les CGU">{{ langState.labels.cgu }}</router-link>
+		    </span>
+            &nbsp;|&nbsp;
+            <span>
+                <router-link class="footer_span" to="/pages/Statistiques" role="button" aria-label="Navigation vers les statistiques">{{ langState.labels.stats }}</router-link>
             </span>
         </footer>
 
@@ -89,6 +93,23 @@ import { languageState, changeLangage } from '@/assets/langages/langService';
 
 import { gsap } from "gsap";
 import { ref, watchEffect, onMounted, nextTick } from 'vue';
+
+/* Partie bdd */
+import axios from 'axios';
+    const enregistrerVisiteur = async () => {
+        try {
+            const rootUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/`;
+            await axios.get(rootUrl + 'backend/controlleur/controlleur_addVisiteur.php/POST',
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+        } catch (error) {
+            console.error('Erreur lors de l’enregistrement du visiteur :', error);
+        };
+}
 
 // Gestion de la langue
 const langState = languageState;
@@ -105,6 +126,9 @@ const applyDarkMode = () => {
 watchEffect(applyDarkMode);
 
 onMounted(() => {
+    /* Partie bdd */
+    enregistrerVisiteur();
+
     // Effet lors de la venue sur la page
 	nextTick(() => {
         const l1 = document.querySelector('.l1');
