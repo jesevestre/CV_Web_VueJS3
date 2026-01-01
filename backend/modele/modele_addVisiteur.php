@@ -1,5 +1,6 @@
 <?php
 function addVisiteur($pdo, $ip) {
+
     $sql = "SELECT id
             FROM Visiteurs
             WHERE ip_visiteur = ? AND date_visite = CURDATE()
