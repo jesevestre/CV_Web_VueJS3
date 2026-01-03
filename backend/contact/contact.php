@@ -67,10 +67,10 @@ $fullMessage = "
     <html>
     <body style='font-family: Arial, sans-serif;'>
         <h2 style='color:#444;'>📩 Nouveau message depuis le formulaire de contact jbsevestre.fr</h2>
-        <p><b>Sujet :</b> $subject</p>
-        <p><b>Message :</b><br />" . nl2br($message) . "</p>
+        <p><b>Sujet de l'expéditeur :</b> $subject</p>
         <p><b>Nom de l'expéditeur :</b> $name</p>
         <p><b>Email de l'expéditeur :</b> $email</p>
+        <p><b>Message de l'expéditeur :</b><br />" . nl2br($message) . "</p><br />
     </body>
     </html>
 ";
