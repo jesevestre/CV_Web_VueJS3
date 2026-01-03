@@ -2,14 +2,14 @@
     <div>
 
         <div class="row pb-5">
-            <p><b>Mon Curriculum vitæ</b><br />
+            <p><b>Curriculum vitæ</b><br />
                 <span class="small"> Mis à jour le 1er Avril 2025</span>
             </p>
 
             <div class="text-center col-12">
                 <iframe
                     src="/fichiers/CV_Jean_Baptiste_SEVESTRE.pdf"
-                    width="90%"
+                    width="100%"
                     height="800"
                     style="border: none;"
                 ></iframe>
