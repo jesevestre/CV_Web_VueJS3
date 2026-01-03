@@ -99,15 +99,12 @@ import axios from 'axios';
     const enregistrerVisiteur = async () => {
         try {
             const rootUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/`;
-            await axios.get(rootUrl + 'backend/controlleur/controlleur_addVisiteur.php/POST',
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                }
+            await axios.post(
+                rootUrl + 'backend/controlleur/controlleur_addVisiteur.php'
             );
         } catch (error) {
-            console.error('Erreur lors de l’enregistrement du visiteur :', error);
+            console.error('Erreur lors de l’enregistrement du visiteur :', 
+            error.response?.data || error.message);
         };
 }
 

@@ -9,8 +9,8 @@ function connexion($HOSTNAME, $DBNAME, $USER, $PASSWORD) {
 	}
 
 	catch(Exception $e){
-		echo "Erreur de connexion à la base de données : " . $e->getMessage();
-    	echo "<br>Hôte : $HOSTNAME, Base : $DBNAME, Utilisateur : $USER";
+		echo "Erreur de connexion à la base de données : " . $e->getMessage() . "<br />";
+    	echo "<br>Hôte : $HOSTNAME, Base : $DBNAME, Utilisateur : $USER" . "<br />";
     	die();
 	}
 
