@@ -66,6 +66,21 @@
             </router-link>
         </div>
 
+        <div v-if="showCookieBanner" class="banniere">
+            <div class="text-banniere">
+                <p>
+                    Ce site utilise des cookies dans un objectif de suivi statistique
+                </p>
+            </div>
+
+            <div class="button-banniere-vert">
+                <a href="#" @click.prevent="acceptCookies">Accepter</a>
+            </div>
+            <div class="button-banniere-rouge">
+                    <a href="?refuse-cookie">Refuser</a>
+                </div>
+        </div>
+
         <footer class="footer text-center">
             <span>
                 <router-link class="footer_span" to="/pages/PlanDuSite" role="button" aria-label="Navigation vers le plan du site">{{ langState.labels.planDuSite }}</router-link>
@@ -87,6 +102,15 @@
 	</div>
 </template>
 
+<!-- 
+<?php
+    if(isset($_GET["accepte-cookie"])){
+        setcookie("accepte-cookie", "true", time() + 365*24*3600);
+        header("Location:./");
+        die();
+    }
+?>
+-->
 
 <script setup>
 import { languageState, changeLangage } from '@/assets/langages/langService';
@@ -108,6 +132,14 @@ import axios from 'axios';
         };
 }
 
+// Gestion bannière cookies
+const showCookieBanner = ref(false);
+
+const acceptCookies = () => {
+    localStorage.setItem("accepte-cookie", "true");
+    showCookieBanner.value = false;
+};
+
 // Gestion de la langue
 const langState = languageState;
 
@@ -123,6 +155,13 @@ const applyDarkMode = () => {
 watchEffect(applyDarkMode);
 
 onMounted(() => {
+    // Vérifie si l'utilisateur a déjà accepté le cookies
+    const cookieAccepted = localStorage.getItem("accepte-cookie");
+
+    if (!cookieAccepted) {
+        showCookieBanner.value = true;
+    }
+
     /* Partie bdd */
     enregistrerVisiteur();
 
@@ -308,15 +347,17 @@ h1 span {
 
 /* Autorisation des cookies */
 .banniere {
+    z-index: 1;
     background: rgba(35, 35, 35, 0.970);
     position: fixed;
+    height: 40px;
     bottom: 0;
     left: 0;
     width: 100%;
     color: white;
     display: flex;
     justify-content: center;
-    padding: 5px;
+    /* padding: 5px; */
     font-family: "Signika Negative", sans-serif;
     transform: translateY(100%);
     animation: slide-in 2s 5s ease-out forwards;
@@ -328,18 +369,20 @@ h1 span {
 }
 .text-banniere p {
     font-size: large;
+    margin-top: 8px;
+    padding-right: 20px;
 }
 
 .button-banniere-vert {
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .button-banniere-rouge {
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .button-banniere-vert a {
-    padding: 10px;
+    padding: 6px;
     margin-right: 5px;
     border-radius: 7px;
     color: white;
@@ -349,7 +392,7 @@ h1 span {
 }
 
 .button-banniere-rouge a {
-    padding: 10px;
+    padding: 6px;
     margin-right: 25px;
     border-radius: 7px;
     color: white;
@@ -469,8 +512,9 @@ footer {
         font-size: 6ch;
         font-weight: 500;
     }
-    .invisible-banniere-text {
-        display: none;
+    .text-banniere p {
+        font-size: small;
+        margin-top: 1px;
     }
     .switch-mode {
         right: 25%;
