@@ -288,7 +288,7 @@ h1 span {
     position: absolute;
     justify-content: center;
     align-items: center;
-    bottom: 10%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
 }
