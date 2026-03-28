@@ -102,41 +102,44 @@
 	</div>
 </template>
 
-<!-- 
-<?php
-    if(isset($_GET["accepte-cookie"])){
-        setcookie("accepte-cookie", "true", time() + 365*24*3600);
-        header("Location:./");
-        die();
-    }
-?>
--->
-
 <script setup>
 import { languageState, changeLangage } from '@/assets/langages/langService';
-
 import { gsap } from "gsap";
 import { ref, watchEffect, onMounted, nextTick } from 'vue';
+import axios from 'axios';
 
 /* Partie bdd */
-import axios from 'axios';
-    const enregistrerVisiteur = async () => {
-        try {
-            const rootUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/`;
-            await axios.post(
-                rootUrl + 'backend/controlleur/controlleurAddVisiteur.php'
-            );
-        } catch (error) {
-            console.error('Erreur lors de l’enregistrement du visiteur :', 
+let visiteEnregistree = false;
+
+const getCookie = (name) => {
+    const cookies = document.cookie.split(';');
+    for (let c of cookies) {
+        const [key, value] = c.trim().split('=');
+        if (key === name) return value;
+    }
+    return null;
+};
+
+const enregistrerVisiteur = async () => {
+    if (visiteEnregistree) return;
+
+    try {
+        const rootUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/`;
+        await axios.post(rootUrl + 'backend/controlleur/controlleurAddVisiteur.php');
+        visiteEnregistree = true;
+
+    } catch (error) {
+        console.error(
+            'Erreur lors de l’enregistrement du visiteur :', 
             error.response?.data || error.message);
-        };
+    };
 }
 
 // Gestion bannière cookies
 const showCookieBanner = ref(false);
 
 const acceptCookies = () => {
-    localStorage.setItem("accepte-cookie", "true");
+    document.cookie = 'cookie_stat_jb_cv=true; max-age=31536000; path=/; SameSite=Lax';
     showCookieBanner.value = false;
 
     enregistrerVisiteur();
@@ -158,12 +161,10 @@ watchEffect(applyDarkMode);
 
 onMounted(() => {
     // Vérifie si l'utilisateur a déjà accepté le cookies
-    const cookieAccepted = localStorage.getItem("accepte-cookie");
-    if (!cookieAccepted) {
-        showCookieBanner.value = true;
-    } else {
-        enregistrerVisiteur();
-    }
+    const cookieAccepted = getCookie("cookie_stat_jb_cv");
+    showCookieBanner.value = !cookieAccepted;
+
+    enregistrerVisiteur();
 
     // Effet lors de la venue sur la page
 	nextTick(() => {
@@ -360,7 +361,7 @@ h1 span {
     /* padding: 5px; */
     font-family: "Signika Negative", sans-serif;
     transform: translateY(100%);
-    animation: slide-in 2s 5s ease-out forwards;
+    animation: slide-in 2s 0.5s ease-out forwards;
 }
 @keyframes slide-in {
     100% {

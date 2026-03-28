@@ -11,10 +11,8 @@ function addVisiteur($pdo, $ip_hash) {
     // Si l'utilisateur n'est pas encore venu aujourd'hui
     // Clé d'unicité présente dans la base de données
     if (!$result) {
-        $sql = "INSERT IGNORE Visiteurs (
-                    ip_visiteur_hash, 
-                    date_visite
-                ) VALUES (?, CURDATE())";
+        $sql = "INSERT IGNORE Visiteurs (ip_visiteur_hash, date_visite) 
+        VALUES (?, CURDATE())";
         $req = $pdo->prepare($sql);
         $req->execute([$ip_hash]);
     }
