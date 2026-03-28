@@ -76,9 +76,9 @@
             <div class="button-banniere-vert">
                 <a href="#" @click.prevent="acceptCookies">Accepter</a>
             </div>
-            <div class="button-banniere-rouge">
-                    <a href="?refuse-cookie">Refuser</a>
-                </div>
+            <!-- <div class="button-banniere-rouge">
+                <a href="?refuse-cookie">Refuser</a>
+            </div> -->
         </div>
 
         <footer class="footer text-center">
@@ -124,7 +124,7 @@ import axios from 'axios';
         try {
             const rootUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? `:${window.location.port}` : ''}/`;
             await axios.post(
-                rootUrl + 'backend/controlleur/controlleur_addVisiteur.php'
+                rootUrl + 'backend/controlleur/controlleurAddVisiteur.php'
             );
         } catch (error) {
             console.error('Erreur lors de l’enregistrement du visiteur :', 
@@ -138,6 +138,8 @@ const showCookieBanner = ref(false);
 const acceptCookies = () => {
     localStorage.setItem("accepte-cookie", "true");
     showCookieBanner.value = false;
+
+    enregistrerVisiteur();
 };
 
 // Gestion de la langue
@@ -157,13 +159,11 @@ watchEffect(applyDarkMode);
 onMounted(() => {
     // Vérifie si l'utilisateur a déjà accepté le cookies
     const cookieAccepted = localStorage.getItem("accepte-cookie");
-
     if (!cookieAccepted) {
         showCookieBanner.value = true;
+    } else {
+        enregistrerVisiteur();
     }
-
-    /* Partie bdd */
-    enregistrerVisiteur();
 
     // Effet lors de la venue sur la page
 	nextTick(() => {
