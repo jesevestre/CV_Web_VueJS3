@@ -3,7 +3,7 @@
 
         <div class="row pb-5">
             <p><b>Curriculum vitæ</b><br />
-                <span class="small"> Mis à jour le 1er Avril 2025</span>
+                <span class="small"> Mis à jour le 29 Mars 2026</span>
             </p>
 
             <div class="text-center col-12">
