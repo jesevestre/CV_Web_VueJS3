@@ -154,6 +154,7 @@ const toggleDarkMode = () => {
 	isDarkMode.value = !isDarkMode.value;
 };
 const applyDarkMode = () => {
+    document.documentElement.style.setProperty('--line-color', isDarkMode.value ? 'rgba(60, 60, 60, 0.8)' : 'white');
 	document.documentElement.style.setProperty('--background', isDarkMode.value ? 'rgba(60, 60, 60, 0.8)' : 'rgba(60, 60, 60, 0.3)');
 	document.documentElement.style.setProperty('--background-btn', isDarkMode.value ? 'rgba(60, 60, 60, 0.8)' : 'rgba(60, 60, 60, 0.45)');
 };
@@ -218,7 +219,7 @@ onMounted(() => {
     width: 300px;
     border-radius: 5px;
     border: 2px solid;
-    color: white;
+    border-color: var(--line-color);
 }
 .l2 {
     position: relative;
@@ -226,7 +227,7 @@ onMounted(() => {
     border-radius: 5px;
     border: 2px solid;
     top: 15px;
-    color: white;
+    border-color: var(--line-color);
 }
 
 /* Titre */
@@ -565,6 +566,7 @@ footer {
 
 /* Les modes de constrastes */
 :root {
+    --line-color: white;
     --background: rgba(60, 60, 60, 0.3);
     --background-btn: rgba(60, 60, 60, 0.45);
 }
